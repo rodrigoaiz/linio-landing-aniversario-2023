@@ -51,6 +51,7 @@ Header
 **************************************************
 */
 .header{
+  background: $gradient__naranja__linear;
   &__navbar{
     @include flex(flex, row, wrap, center, center);
     width: 100%;
@@ -76,7 +77,7 @@ Header
         margin-left: 0;
       }
       li{
-        @include parrafo($tipo__subtitulos,clamp(0.8rem,1.25vw,2rem), 700, $color__blanco);
+        @include parrafo($tipo__titulos,clamp(0.8rem,1.25vw,2rem), 700, $color__blanco);
         text-transform: uppercase;
         //margin-left: 3em;
         padding: 0.5rem 0.9rem;
