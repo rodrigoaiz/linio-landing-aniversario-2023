@@ -1,0 +1,112 @@
+/*
+**************************************************
+––––––––––––––––––––––––––––––––––––––––––––––––––
+Imports
+––––––––––––––––––––––––––––––––––––––––––––––––––
+**************************************************
+*/
+//@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,700;0,800;1,400;1,800&family=Rubik:wght@900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,300;0,400;0,900;1,300;1,400;1,900&display=swap');
+@import"reset.scss";
+@import"colors.scss";
+@import"mixins.scss";
+/*
+**************************************************
+––––––––––––––––––––––––––––––––––––––––––––––––––
+Fuentes
+––––––––––––––––––––––––––––––––––––––––––––––––––
+**************************************************
+*/
+$tipo__titulos: 'Lato', sans-serif;
+$tipo__textos: 'Lato', sans-serif;
+body{
+  font-family: $tipo__textos;
+  font-size: clamp(1.15rem, 1vw, 1em);
+}
+em{
+  font-style: italic;
+}
+a{
+  text-decoration: underline;
+  transition: all 0.5s ease;
+}
+strong{
+  font-weight: 700;
+}
+p{
+  line-height: clamp(1.7rem, 1.7vw, 1.9rem);
+  &:not(:last-child) {
+    margin-bottom: 2rem;
+  }
+}
+.text-center{
+  text-align: center;
+}
+
+/*
+**************************************************
+––––––––––––––––––––––––––––––––––––––––––––––––––
+Header
+––––––––––––––––––––––––––––––––––––––––––––––––––
+**************************************************
+*/
+.header{
+  &__navbar{
+    @include flex(flex, row, wrap, center, center);
+    width: 100%;
+    max-height: 10rem;
+    position: fixed;
+    z-index: 5;
+    border-radius:0;
+    margin:0;
+    //padding: 2em;
+    top: 0;
+    @include media(659px) {
+      padding-top:0.1rem;
+    }
+    @include media(390px){
+      @include flex(flex, row, wrap, center, center);
+      min-height: 4em;
+      padding: 0;
+
+    }
+    &__ul{
+      @include flex(flex, row, wrap, center, center);
+      li:first-child{
+        margin-left: 0;
+      }
+      li{
+        @include parrafo($tipo__subtitulos,clamp(0.8rem,1.25vw,2rem), 700, $color__blanco);
+        text-transform: uppercase;
+        //margin-left: 3em;
+        padding: 0.5rem 0.9rem;
+        transition: all 0.5s ease;
+        cursor: pointer;
+        &:hover{
+          background-color:$color__morado;
+        }
+        @include media(370px){
+          margin-left: 1rem;
+        }
+      }
+    }
+    &__logo{
+      max-height: 5em;
+      @include media(320px){
+        display: none;
+      }
+      @include media(800px){
+       max-height: 2.5em;
+      }
+      &:hover{
+        transition: all 0.5s ease;
+        opacity: 0.8;
+      }
+    }
+  }
+
+}
+.header-down {
+  background-color:$color__azul;
+  transition: all 0.5s ease;
+}

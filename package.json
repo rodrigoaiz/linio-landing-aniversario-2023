@@ -1,0 +1,20 @@
+{
+  "name": "linio-landing-aniversario-2023",
+  "version": "1.0.0",
+  "description": "Landing para aniversario linio 2023",
+  "main": "index.html",
+  "scripts": {
+    "sass-watch": "sass --watch src/sass:dist/css",
+    "sass-compress": "sass src/sass:dist/css --output-style compressed"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rodrigoaiz/linio-landing-aniversario-2023.git"
+  },
+  "author": "Rodrigo Aizpuru",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/rodrigoaiz/linio-landing-aniversario-2023/issues"
+  },
+  "homepage": "https://github.com/rodrigoaiz/linio-landing-aniversario-2023#readme"
+}
