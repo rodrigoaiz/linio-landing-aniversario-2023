@@ -46,12 +46,26 @@ p{
 /*
 **************************************************
 ––––––––––––––––––––––––––––––––––––––––––––––––––
+Hero
+––––––––––––––––––––––––––––––––––––––––––––––––––
+**************************************************
+*/
+
+.hero{
+  @include gradiente (radial-gradient, $color__aniversario__naranja, $color__aniversario__rosa);
+  &__h2{
+    @include titulo-tamano();
+  }
+}
+/*
+**************************************************
+––––––––––––––––––––––––––––––––––––––––––––––––––
 Header
 ––––––––––––––––––––––––––––––––––––––––––––––––––
 **************************************************
 */
 .header{
-  background: $gradient__naranja__linear;
+/*   background: $gradient__naranja__linear; */
   &__navbar{
     @include flex(flex, row, wrap, center, center);
     width: 100%;

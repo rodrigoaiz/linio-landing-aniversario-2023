@@ -22,6 +22,14 @@
         align-content: $align;
     }
 }
+@mixin gradiente($type, $color1, $color2) {
+  @if $type == 'radial-gradient' {
+    background: radial-gradient(circle, $color1 0%, $color2 100%);
+  } @else {
+    background: linear-gradient(90deg, $color1 0%, $color2 100%);
+  }
+}
+
 @mixin media($medida: 480px) {
     @media screen and (max-width: $medida) {
         @content;
