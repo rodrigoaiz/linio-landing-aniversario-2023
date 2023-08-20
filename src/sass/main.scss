@@ -17,6 +17,7 @@ Fuentes
 ––––––––––––––––––––––––––––––––––––––––––––––––––
 **************************************************
 */
+$espacio__secciones:4rem;
 $tipo__titulos: 'Lato', sans-serif;
 $tipo__textos: 'Lato', sans-serif;
 body{
@@ -40,7 +41,66 @@ p{
 .text-center{
   text-align: center;
 }
+/*
+**************************************************
+––––––––––––––––––––––––––––––––––––––––––––––––––
+Flotante
+––––––––––––––––––––––––––––––––––––––––––––––––––
+**************************************************
+*/
+.flotante{
 
+  position:relative;
+  left:0px;
+  top:0px;
+  width: 100%;
+  height: 100%;
+  a{
+    text-decoration: none;
+    color: $color__blanco;
+  }
+  &__boton{
+    @include gradiente(linear-gradient, $color__naranja, $color__naranja__alt);
+    @include flex(flex, row, wrap, left, space-evenly);
+    border-radius: 5rem;
+    position: absolute;
+    top: 14.5rem;
+    right: 0.5rem;
+    width: 9rem;
+    height: 4rem;
+    cursor: pointer;
+    :hover{
+      opacity: .8;
+      padding-bottom: 0.5rem;
+      transition: all 0.5s ease;
+    }
+    span{
+      max-width: 50%;
+      text-align: right;
+      font-size: 0.75rem
+    }
+    ::before{
+      content: "";
+      background-image: url("../img/down-solid.webp"),linear-gradient(90deg, $color__naranja__alt 0%, $color__naranja 100%);
+      background-position: center center;
+      background-size: cover;
+      background-repeat: no-repeat;
+      width: 4rem;
+      height: 4rem;
+      border-radius: 5rem;
+      position: absolute;
+      top:0;
+      right: 0;
+    }
+  }
+}
+.flotante-down {
+  position: sticky ;
+  top: -14rem;
+  right: 0;
+  transition: all 0.5s ease;
+  z-index: 999;
+}
 /*
 **************************************************
 ––––––––––––––––––––––––––––––––––––––––––––––––––
@@ -51,7 +111,7 @@ Hero
 
 .hero{
   @include flex(flex, row, wrap, center, space-evenly);
-  min-height: 35vh;
+  min-height: 19rem;
   background-image: url("../img/circulos-fondo.webp"), url("../img/notas-musicales.webp"),linear-gradient(90deg, $color__aniversario__naranja 0%, $color__aniversario__rosa 50%, $color__aniversario__naranja 100%);
   background-position: center center, center center, center center;
   background-repeat: no-repeat, no-repeat, no-repeat;
@@ -63,6 +123,7 @@ Hero
   &__h3{
     @include parrafo($tipo__textos,clamp(1.5rem,1vw,2rem), 400, $color__blanco);
     text-align: center;
+    width: 75%;
   }
 }
 
@@ -74,13 +135,14 @@ Que son
 **************************************************
 */
 .queson{
-  margin-top: 2rem;
+  margin-top: $espacio__secciones;
   &__texto{
     @include flex(flex, row, wrap, center, space-evenly);
     background-color: $color__gris__claro;
     background-image: url("../img/medio-circulo-gris.webp");
     background-size: auto 100%;
     background-repeat: no-repeat;
+    padding: 5rem 0;
     h2{
       font-weight: 900;
       text-align: center;
@@ -110,7 +172,7 @@ Donde son
 **************************************************
 */
 .donde{
-  margin-top: 2rem;
+  margin-top: $espacio__secciones;
   &__texto{
     @include flex(flex, row, wrap, center, space-evenly);
     h2{
@@ -145,10 +207,10 @@ Porque
 **************************************************
 */
 .porque{
-  margin-top: 2rem;
+  margin-top: $espacio__secciones;
   background-color: $color__gris__claro;
   &__texto{
-    min-height: 25vh;
+    min-height: 20rem;
     @include flex(flex, row, wrap, center, space-evenly);
     h2{
       font-weight: 900;
@@ -179,7 +241,8 @@ Porque
       }
       h2{
         @include parrafo($tipo__titulos,2rem,900,$color__blanco);
-
+        max-width: 65%;
+        text-align: center;
       }
     }
   }
@@ -196,7 +259,7 @@ formulario
 */
 
 .formulario{
-  margin-top: 2rem;
+  margin-top: $espacio__secciones;
   h2{
       @include parrafo($tipo__titulos,clamp(1.5rem,1vw,2rem), 900, $color__naranja);
       text-align: center;
@@ -205,7 +268,7 @@ formulario
     width: 50%;
     margin:0 auto;
     input{
-      border: 1px solid $color__gris__claro;
+      border: 1px solid $color__gris__oscuro;
       width: 100%;
       margin-bottom: 1rem;
       padding: 0.25rem 0.75rem;
@@ -224,6 +287,55 @@ formulario
   }
 }
 
+/*
+**************************************************
+––––––––––––––––––––––––––––––––––––––––––––––––––
+FAQ
+––––––––––––––––––––––––––––––––––––––––––––––––––
+**************************************************
+*/
+
+.faq{
+  margin-top: $espacio__secciones;
+  article{
+    margin-bottom: 1rem;
+  }
+  h2{
+      @include parrafo($tipo__titulos,clamp(1.5rem,1vw,2rem), 900, $color__naranja);
+      text-align: center;
+  }
+  button{
+       @include gradiente (linear-gradient, $color__naranja, $color__naranja__alt);
+       margin: 0 auto;
+       color: $color__blanco;
+       text-transform: uppercase;
+       padding: 0.5rem 1rem;
+
+       font-family: $tipo__titulos;
+       border-radius: 5rem;
+
+    }
+}
+
+.hc-question{
+  border: 1px solid $color__gris__claro;
+  border-radius: 0.25rem;
+  padding: 0.5rem;
+  h2{
+    text-align: left;
+    ::before{
+      content: "+";
+      border: 1px solid;
+      border-radius: 2rem;
+      padding:0.05rem 0.5rem;
+      margin-right: 0.5rem;
+    }
+    a{
+      color:$color__negro;
+      text-decoration: none;
+    }
+  }
+}
 /*
 **************************************************
 ––––––––––––––––––––––––––––––––––––––––––––––––––
@@ -287,8 +399,4 @@ Header
     }
   }
 
-}
-.header-down {
-  background-color:$color__azul;
-  transition: all 0.5s ease;
 }

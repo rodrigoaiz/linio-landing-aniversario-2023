@@ -426,6 +426,70 @@ p {
 /*
 **************************************************
 ––––––––––––––––––––––––––––––––––––––––––––––––––
+Flotante
+––––––––––––––––––––––––––––––––––––––––––––––––––
+**************************************************
+*/
+.flotante {
+  position: relative;
+  left: 0px;
+  top: 0px;
+  width: 100%;
+  height: 100%;
+}
+.flotante a {
+  text-decoration: none;
+  color: rgb(255, 255, 255);
+}
+.flotante__boton {
+  background: linear-gradient(90deg, #ff6600 0%, #ff9900 100%);
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: left;
+  align-content: space-evenly;
+  border-radius: 5rem;
+  position: absolute;
+  top: 14.5rem;
+  right: 0.5rem;
+  width: 9rem;
+  height: 4rem;
+  cursor: pointer;
+}
+.flotante__boton :hover {
+  opacity: 0.8;
+  padding-bottom: 0.5rem;
+  transition: all 0.5s ease;
+}
+.flotante__boton span {
+  max-width: 50%;
+  text-align: right;
+  font-size: 0.75rem;
+}
+.flotante__boton ::before {
+  content: "";
+  background-image: url("../img/down-solid.webp"), linear-gradient(90deg, #ff9900 0%, #ff6600 100%);
+  background-position: center center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  width: 4rem;
+  height: 4rem;
+  border-radius: 5rem;
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+.flotante-down {
+  position: sticky;
+  top: -14rem;
+  right: 0;
+  transition: all 0.5s ease;
+  z-index: 999;
+}
+
+/*
+**************************************************
+––––––––––––––––––––––––––––––––––––––––––––––––––
 Hero
 ––––––––––––––––––––––––––––––––––––––––––––––––––
 **************************************************
@@ -435,7 +499,7 @@ Hero
   flex-flow: row wrap;
   justify-content: center;
   align-content: space-evenly;
-  min-height: 35vh;
+  min-height: 19rem;
   background-image: url("../img/circulos-fondo.webp"), url("../img/notas-musicales.webp"), linear-gradient(90deg, #FF5E15 0%, #FF3153 50%, #FF5E15 100%);
   background-position: center center, center center, center center;
   background-repeat: no-repeat, no-repeat, no-repeat;
@@ -453,6 +517,7 @@ Hero
   font-weight: 400;
   color: rgb(255, 255, 255);
   text-align: center;
+  width: 75%;
 }
 
 /*
@@ -463,7 +528,7 @@ Que son
 **************************************************
 */
 .queson {
-  margin-top: 2rem;
+  margin-top: 4rem;
 }
 .queson__texto {
   display: flex;
@@ -474,6 +539,7 @@ Que son
   background-image: url("../img/medio-circulo-gris.webp");
   background-size: auto 100%;
   background-repeat: no-repeat;
+  padding: 5rem 0;
 }
 .queson__texto h2 {
   font-weight: 900;
@@ -504,7 +570,7 @@ Donde son
 **************************************************
 */
 .donde {
-  margin-top: 2rem;
+  margin-top: 4rem;
 }
 .donde__texto {
   display: flex;
@@ -543,11 +609,11 @@ Porque
 **************************************************
 */
 .porque {
-  margin-top: 2rem;
+  margin-top: 4rem;
   background-color: #ebf0f5;
 }
 .porque__texto {
-  min-height: 25vh;
+  min-height: 20rem;
   display: flex;
   flex-flow: row wrap;
   justify-content: center;
@@ -589,6 +655,8 @@ Porque
   font-size: 2rem;
   font-weight: 900;
   color: rgb(255, 255, 255);
+  max-width: 65%;
+  text-align: center;
 }
 
 /*
@@ -599,7 +667,7 @@ formulario
 **************************************************
 */
 .formulario {
-  margin-top: 2rem;
+  margin-top: 4rem;
 }
 .formulario h2 {
   font-family: "Lato", sans-serif;
@@ -613,7 +681,7 @@ formulario
   margin: 0 auto;
 }
 .formulario__form input {
-  border: 1px solid #ebf0f5;
+  border: 1px solid #494e58;
   width: 100%;
   margin-bottom: 1rem;
   padding: 0.25rem 0.75rem;
@@ -628,6 +696,56 @@ formulario
   width: 100%;
   font-family: "Lato", sans-serif;
   border-radius: 5rem;
+}
+
+/*
+**************************************************
+––––––––––––––––––––––––––––––––––––––––––––––––––
+FAQ
+––––––––––––––––––––––––––––––––––––––––––––––––––
+**************************************************
+*/
+.faq {
+  margin-top: 4rem;
+}
+.faq article {
+  margin-bottom: 1rem;
+}
+.faq h2 {
+  font-family: "Lato", sans-serif;
+  font-size: clamp(1.5rem, 1vw, 2rem);
+  font-weight: 900;
+  color: #ff6600;
+  text-align: center;
+}
+.faq button {
+  background: linear-gradient(90deg, #ff6600 0%, #ff9900 100%);
+  margin: 0 auto;
+  color: rgb(255, 255, 255);
+  text-transform: uppercase;
+  padding: 0.5rem 1rem;
+  font-family: "Lato", sans-serif;
+  border-radius: 5rem;
+}
+
+.hc-question {
+  border: 1px solid #ebf0f5;
+  border-radius: 0.25rem;
+  padding: 0.5rem;
+}
+.hc-question h2 {
+  text-align: left;
+}
+.hc-question h2 ::before {
+  content: "+";
+  border: 1px solid;
+  border-radius: 2rem;
+  padding: 0.05rem 0.5rem;
+  margin-right: 0.5rem;
+}
+.hc-question h2 a {
+  color: rgb(43, 43, 43);
+  text-decoration: none;
 }
 
 /*
@@ -711,11 +829,6 @@ Header
 .header__navbar__logo:hover {
   transition: all 0.5s ease;
   opacity: 0.8;
-}
-
-.header-down {
-  background-color: #232f3e;
-  transition: all 0.5s ease;
 }
 
 /*# sourceMappingURL=main.css.map */
