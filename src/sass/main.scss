@@ -35,9 +35,6 @@ strong{
 }
 p{
   line-height: clamp(1.7rem, 1.7vw, 1.9rem);
-  &:not(:last-child) {
-    margin-bottom: 2rem;
-  }
 }
 .text-center{
   text-align: center;
@@ -53,10 +50,180 @@ Hero
 
 .hero{
   @include gradiente (radial-gradient, $color__aniversario__naranja, $color__aniversario__rosa);
+  @include flex(flex, row, wrap, center, space-evenly);
+  min-height: 35vh;
   &__h2{
     @include titulo-tamano();
+    color: $color__blanco;
+    font-size: clamp(2.5rem, 2vw, 3rem);
+  }
+  &__h3{
+    @include parrafo($tipo__textos,clamp(1.5rem,1vw,2rem), 400, $color__blanco);
+    text-align: center;
   }
 }
+
+/*
+**************************************************
+––––––––––––––––––––––––––––––––––––––––––––––––––
+Queson
+––––––––––––––––––––––––––––––––––––––––––––––––––
+**************************************************
+*/
+.queson{
+  margin-top: 2rem;
+  &__texto{
+    @include flex(flex, row, wrap, center, space-evenly);
+    background-color: $color__gris__claro;
+    h2{
+      font-weight: 900;
+      text-align: center;
+    }
+    p{
+      margin-bottom: 0;
+    }
+    .lead{
+      @include parrafo($tipo__titulos,clamp(1.5rem,1vw,2rem), 900, $color__negro);
+
+    }
+  }
+}
+
+/*
+**************************************************
+––––––––––––––––––––––––––––––––––––––––––––––––––
+Queson
+––––––––––––––––––––––––––––––––––––––––––––––––––
+**************************************************
+*/
+.donde{
+  margin-top: 2rem;
+  &__texto{
+    @include flex(flex, row, wrap, center, space-evenly);
+    h2{
+      font-weight: 900;
+      text-align: center;
+    }
+    p{
+      margin-bottom: 0;
+    }
+    .lead{
+      @include parrafo($tipo__titulos,clamp(1.5rem,1vw,2rem), 900, $color__negro);
+
+    }
+  }
+  &__imagen{
+    &__bloque{
+      min-height: 100%;
+      min-width: 100%;
+      position: relative;
+      top: 0;
+      right: 0;
+      background: $gradient__naranja__linear;
+      border-radius: 20rem 0 0 20rem;
+    }
+  }
+}
+/*
+**************************************************
+––––––––––––––––––––––––––––––––––––––––––––––––––
+Porque
+––––––––––––––––––––––––––––––––––––––––––––––––––
+**************************************************
+*/
+.porque{
+  margin-top: 2rem;
+  &__texto{
+    @include flex(flex, row, wrap, center, space-evenly);
+    h2{
+      font-weight: 900;
+      text-align: center;
+    }
+    p{
+      margin-bottom: 0;
+    }
+    .lead{
+      @include parrafo($tipo__titulos,clamp(1.5rem,1vw,2rem), 900, $color__negro);
+
+    }
+  }
+  &__imagen{
+    &__bloque{
+      min-height: 100%;
+      min-width: 100%;
+      position: relative;
+      top: 0;
+      right: 0;
+      background: $gradient__naranja__linear;
+      border-radius: 0 20rem 20rem 0;
+      @include flex(flex, row, wrap, center, space-evenly);
+      span{
+        width: 100%;
+        text-align: center;
+        font-size: 4rem;
+      }
+      h2{
+        @include parrafo($tipo__titulos,2rem,900,$color__blanco);
+
+      }
+    }
+  }
+}
+
+
+
+/*
+**************************************************
+––––––––––––––––––––––––––––––––––––––––––––––––––
+Queson
+––––––––––––––––––––––––––––––––––––––––––––––––––
+**************************************************
+*/
+.donde{
+  margin-top: 2rem;
+  &__texto{
+    @include flex(flex, row, wrap, center, space-evenly);
+    h2{
+      font-weight: 900;
+      text-align: center;
+    }
+    p{
+      margin-bottom: 0;
+    }
+    .lead{
+      @include parrafo($tipo__titulos,clamp(1.5rem,1vw,2rem), 900, $color__negro);
+
+    }
+  }
+  &__imagen{
+    &__bloque{
+      min-height: 100%;
+      max-width: 80%;
+      position: relative;
+      top: 0;
+      right: 0;
+      background: $gradient__naranja__linear;
+      border-radius: 20rem 0 0 20rem;
+    }
+  }
+}
+
+/*
+**************************************************
+––––––––––––––––––––––––––––––––––––––––––––––––––
+formulario
+––––––––––––––––––––––––––––––––––––––––––––––––––
+**************************************************
+*/
+
+.formulario{
+  margin-top: 2rem;
+  h2{
+      @include parrafo($tipo__titulos,clamp(1.5rem,1vw,2rem), 900, $color__naranja);
+      text-align: center;
+  }
+}
+
 /*
 **************************************************
 ––––––––––––––––––––––––––––––––––––––––––––––––––

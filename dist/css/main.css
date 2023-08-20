@@ -417,9 +417,6 @@ strong {
 p {
   line-height: clamp(1.7rem, 1.7vw, 1.9rem);
 }
-p:not(:last-child) {
-  margin-bottom: 2rem;
-}
 
 .text-center {
   text-align: center;
@@ -434,13 +431,205 @@ Hero
 */
 .hero {
   background: radial-gradient(circle, #FF5E15 0%, #FF3153 100%);
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  align-content: space-evenly;
+  min-height: 35vh;
 }
 .hero__h2 {
   font-family: "Lato", sans-serif;
-  font-size: clamp(3rem, 6vw, 7rem);
-  color: rgb(255, 255, 255);
   font-weight: 900;
-  margin: 1em 0;
+  text-align: center;
+  color: rgb(255, 255, 255);
+  font-size: clamp(2.5rem, 2vw, 3rem);
+}
+.hero__h3 {
+  font-family: "Lato", sans-serif;
+  font-size: clamp(1.5rem, 1vw, 2rem);
+  font-weight: 400;
+  color: rgb(255, 255, 255);
+  text-align: center;
+}
+
+/*
+**************************************************
+––––––––––––––––––––––––––––––––––––––––––––––––––
+Queson
+––––––––––––––––––––––––––––––––––––––––––––––––––
+**************************************************
+*/
+.queson {
+  margin-top: 2rem;
+}
+.queson__texto {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  align-content: space-evenly;
+  background-color: #ebf0f5;
+}
+.queson__texto h2 {
+  font-weight: 900;
+  text-align: center;
+}
+.queson__texto p {
+  margin-bottom: 0;
+}
+.queson__texto .lead {
+  font-family: "Lato", sans-serif;
+  font-size: clamp(1.5rem, 1vw, 2rem);
+  font-weight: 900;
+  color: rgb(43, 43, 43);
+}
+
+/*
+**************************************************
+––––––––––––––––––––––––––––––––––––––––––––––––––
+Queson
+––––––––––––––––––––––––––––––––––––––––––––––––––
+**************************************************
+*/
+.donde {
+  margin-top: 2rem;
+}
+.donde__texto {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  align-content: space-evenly;
+}
+.donde__texto h2 {
+  font-weight: 900;
+  text-align: center;
+}
+.donde__texto p {
+  margin-bottom: 0;
+}
+.donde__texto .lead {
+  font-family: "Lato", sans-serif;
+  font-size: clamp(1.5rem, 1vw, 2rem);
+  font-weight: 900;
+  color: rgb(43, 43, 43);
+}
+.donde__imagen__bloque {
+  min-height: 100%;
+  min-width: 100%;
+  position: relative;
+  top: 0;
+  right: 0;
+  background: linear-gradient(90deg, #ff6600 0%, #ff9900 100%);
+  border-radius: 20rem 0 0 20rem;
+}
+
+/*
+**************************************************
+––––––––––––––––––––––––––––––––––––––––––––––––––
+Porque
+––––––––––––––––––––––––––––––––––––––––––––––––––
+**************************************************
+*/
+.porque {
+  margin-top: 2rem;
+}
+.porque__texto {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  align-content: space-evenly;
+}
+.porque__texto h2 {
+  font-weight: 900;
+  text-align: center;
+}
+.porque__texto p {
+  margin-bottom: 0;
+}
+.porque__texto .lead {
+  font-family: "Lato", sans-serif;
+  font-size: clamp(1.5rem, 1vw, 2rem);
+  font-weight: 900;
+  color: rgb(43, 43, 43);
+}
+.porque__imagen__bloque {
+  min-height: 100%;
+  min-width: 100%;
+  position: relative;
+  top: 0;
+  right: 0;
+  background: linear-gradient(90deg, #ff6600 0%, #ff9900 100%);
+  border-radius: 0 20rem 20rem 0;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  align-content: space-evenly;
+}
+.porque__imagen__bloque span {
+  width: 100%;
+  text-align: center;
+  font-size: 4rem;
+}
+.porque__imagen__bloque h2 {
+  font-family: "Lato", sans-serif;
+  font-size: 2rem;
+  font-weight: 900;
+  color: rgb(255, 255, 255);
+}
+
+/*
+**************************************************
+––––––––––––––––––––––––––––––––––––––––––––––––––
+Queson
+––––––––––––––––––––––––––––––––––––––––––––––––––
+**************************************************
+*/
+.donde {
+  margin-top: 2rem;
+}
+.donde__texto {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  align-content: space-evenly;
+}
+.donde__texto h2 {
+  font-weight: 900;
+  text-align: center;
+}
+.donde__texto p {
+  margin-bottom: 0;
+}
+.donde__texto .lead {
+  font-family: "Lato", sans-serif;
+  font-size: clamp(1.5rem, 1vw, 2rem);
+  font-weight: 900;
+  color: rgb(43, 43, 43);
+}
+.donde__imagen__bloque {
+  min-height: 100%;
+  max-width: 80%;
+  position: relative;
+  top: 0;
+  right: 0;
+  background: linear-gradient(90deg, #ff6600 0%, #ff9900 100%);
+  border-radius: 20rem 0 0 20rem;
+}
+
+/*
+**************************************************
+––––––––––––––––––––––––––––––––––––––––––––––––––
+formulario
+––––––––––––––––––––––––––––––––––––––––––––––––––
+**************************************************
+*/
+.formulario {
+  margin-top: 2rem;
+}
+.formulario h2 {
+  font-family: "Lato", sans-serif;
+  font-size: clamp(1.5rem, 1vw, 2rem);
+  font-weight: 900;
+  color: #ff6600;
   text-align: center;
 }
 

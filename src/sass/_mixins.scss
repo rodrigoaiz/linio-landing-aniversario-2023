@@ -1,9 +1,6 @@
 @mixin titulo-tamano {
     font-family: $tipo__titulos;
-    font-size: clamp(3rem, 6vw, 7rem);
-    color:$color__blanco;
     font-weight:900;
-    margin: 1em 0;
     text-align: center;
 }
 @mixin parrafo ($font, $size, $grosor, $color) {
