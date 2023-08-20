@@ -35,6 +35,7 @@ strong{
 }
 p{
   line-height: clamp(1.7rem, 1.7vw, 1.9rem);
+  font-family: $tipo__textos;
 }
 .text-center{
   text-align: center;
@@ -49,9 +50,11 @@ Hero
 */
 
 .hero{
-  @include gradiente (radial-gradient, $color__aniversario__naranja, $color__aniversario__rosa);
   @include flex(flex, row, wrap, center, space-evenly);
   min-height: 35vh;
+  background-image: url("../img/circulos-fondo.webp"), url("../img/notas-musicales.webp"),linear-gradient(90deg, $color__aniversario__naranja 0%, $color__aniversario__rosa 50%, $color__aniversario__naranja 100%);
+  background-position: center center, center center, center center;
+  background-repeat: no-repeat, no-repeat, no-repeat;
   &__h2{
     @include titulo-tamano();
     color: $color__blanco;
@@ -66,7 +69,7 @@ Hero
 /*
 **************************************************
 ––––––––––––––––––––––––––––––––––––––––––––––––––
-Queson
+Que son
 ––––––––––––––––––––––––––––––––––––––––––––––––––
 **************************************************
 */
@@ -75,24 +78,34 @@ Queson
   &__texto{
     @include flex(flex, row, wrap, center, space-evenly);
     background-color: $color__gris__claro;
+    background-image: url("../img/medio-circulo-gris.webp");
+    background-size: auto 100%;
+    background-repeat: no-repeat;
     h2{
       font-weight: 900;
       text-align: center;
     }
     p{
       margin-bottom: 0;
+      padding:0 2rem;
     }
     .lead{
       @include parrafo($tipo__titulos,clamp(1.5rem,1vw,2rem), 900, $color__negro);
 
     }
   }
+   &__imagen{
+    background-image: url("../img/fondo-grammys.webp") ;
+    background-position: center center;
+    background-repeat: no-repeat;
+    min-height: 35vh;
+   }
 }
 
 /*
 **************************************************
 ––––––––––––––––––––––––––––––––––––––––––––––––––
-Queson
+Donde son
 ––––––––––––––––––––––––––––––––––––––––––––––––––
 **************************************************
 */
@@ -133,7 +146,9 @@ Porque
 */
 .porque{
   margin-top: 2rem;
+  background-color: $color__gris__claro;
   &__texto{
+    min-height: 25vh;
     @include flex(flex, row, wrap, center, space-evenly);
     h2{
       font-weight: 900;
@@ -175,42 +190,6 @@ Porque
 /*
 **************************************************
 ––––––––––––––––––––––––––––––––––––––––––––––––––
-Queson
-––––––––––––––––––––––––––––––––––––––––––––––––––
-**************************************************
-*/
-.donde{
-  margin-top: 2rem;
-  &__texto{
-    @include flex(flex, row, wrap, center, space-evenly);
-    h2{
-      font-weight: 900;
-      text-align: center;
-    }
-    p{
-      margin-bottom: 0;
-    }
-    .lead{
-      @include parrafo($tipo__titulos,clamp(1.5rem,1vw,2rem), 900, $color__negro);
-
-    }
-  }
-  &__imagen{
-    &__bloque{
-      min-height: 100%;
-      max-width: 80%;
-      position: relative;
-      top: 0;
-      right: 0;
-      background: $gradient__naranja__linear;
-      border-radius: 20rem 0 0 20rem;
-    }
-  }
-}
-
-/*
-**************************************************
-––––––––––––––––––––––––––––––––––––––––––––––––––
 formulario
 ––––––––––––––––––––––––––––––––––––––––––––––––––
 **************************************************
@@ -221,6 +200,27 @@ formulario
   h2{
       @include parrafo($tipo__titulos,clamp(1.5rem,1vw,2rem), 900, $color__naranja);
       text-align: center;
+  }
+  &__form{
+    width: 50%;
+    margin:0 auto;
+    input{
+      border: 1px solid $color__gris__claro;
+      width: 100%;
+      margin-bottom: 1rem;
+      padding: 0.25rem 0.75rem;
+      border-radius: 5px;
+    }
+    button{
+       @include gradiente (linear-gradient, $color__naranja, $color__naranja__alt);
+       margin: 0 auto;
+       color: $color__blanco;
+       text-transform: uppercase;
+       padding: 0.5rem 0;
+       width: 100%;
+       font-family: $tipo__titulos;
+       border-radius: 5rem;
+    }
   }
 }
 

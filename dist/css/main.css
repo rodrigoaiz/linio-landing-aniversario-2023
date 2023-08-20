@@ -416,6 +416,7 @@ strong {
 
 p {
   line-height: clamp(1.7rem, 1.7vw, 1.9rem);
+  font-family: "Lato", sans-serif;
 }
 
 .text-center {
@@ -430,12 +431,14 @@ Hero
 **************************************************
 */
 .hero {
-  background: radial-gradient(circle, #FF5E15 0%, #FF3153 100%);
   display: flex;
   flex-flow: row wrap;
   justify-content: center;
   align-content: space-evenly;
   min-height: 35vh;
+  background-image: url("../img/circulos-fondo.webp"), url("../img/notas-musicales.webp"), linear-gradient(90deg, #FF5E15 0%, #FF3153 50%, #FF5E15 100%);
+  background-position: center center, center center, center center;
+  background-repeat: no-repeat, no-repeat, no-repeat;
 }
 .hero__h2 {
   font-family: "Lato", sans-serif;
@@ -455,7 +458,7 @@ Hero
 /*
 **************************************************
 ––––––––––––––––––––––––––––––––––––––––––––––––––
-Queson
+Que son
 ––––––––––––––––––––––––––––––––––––––––––––––––––
 **************************************************
 */
@@ -468,6 +471,9 @@ Queson
   justify-content: center;
   align-content: space-evenly;
   background-color: #ebf0f5;
+  background-image: url("../img/medio-circulo-gris.webp");
+  background-size: auto 100%;
+  background-repeat: no-repeat;
 }
 .queson__texto h2 {
   font-weight: 900;
@@ -475,6 +481,7 @@ Queson
 }
 .queson__texto p {
   margin-bottom: 0;
+  padding: 0 2rem;
 }
 .queson__texto .lead {
   font-family: "Lato", sans-serif;
@@ -482,11 +489,17 @@ Queson
   font-weight: 900;
   color: rgb(43, 43, 43);
 }
+.queson__imagen {
+  background-image: url("../img/fondo-grammys.webp");
+  background-position: center center;
+  background-repeat: no-repeat;
+  min-height: 35vh;
+}
 
 /*
 **************************************************
 ––––––––––––––––––––––––––––––––––––––––––––––––––
-Queson
+Donde son
 ––––––––––––––––––––––––––––––––––––––––––––––––––
 **************************************************
 */
@@ -531,8 +544,10 @@ Porque
 */
 .porque {
   margin-top: 2rem;
+  background-color: #ebf0f5;
 }
 .porque__texto {
+  min-height: 25vh;
   display: flex;
   flex-flow: row wrap;
   justify-content: center;
@@ -579,45 +594,6 @@ Porque
 /*
 **************************************************
 ––––––––––––––––––––––––––––––––––––––––––––––––––
-Queson
-––––––––––––––––––––––––––––––––––––––––––––––––––
-**************************************************
-*/
-.donde {
-  margin-top: 2rem;
-}
-.donde__texto {
-  display: flex;
-  flex-flow: row wrap;
-  justify-content: center;
-  align-content: space-evenly;
-}
-.donde__texto h2 {
-  font-weight: 900;
-  text-align: center;
-}
-.donde__texto p {
-  margin-bottom: 0;
-}
-.donde__texto .lead {
-  font-family: "Lato", sans-serif;
-  font-size: clamp(1.5rem, 1vw, 2rem);
-  font-weight: 900;
-  color: rgb(43, 43, 43);
-}
-.donde__imagen__bloque {
-  min-height: 100%;
-  max-width: 80%;
-  position: relative;
-  top: 0;
-  right: 0;
-  background: linear-gradient(90deg, #ff6600 0%, #ff9900 100%);
-  border-radius: 20rem 0 0 20rem;
-}
-
-/*
-**************************************************
-––––––––––––––––––––––––––––––––––––––––––––––––––
 formulario
 ––––––––––––––––––––––––––––––––––––––––––––––––––
 **************************************************
@@ -631,6 +607,27 @@ formulario
   font-weight: 900;
   color: #ff6600;
   text-align: center;
+}
+.formulario__form {
+  width: 50%;
+  margin: 0 auto;
+}
+.formulario__form input {
+  border: 1px solid #ebf0f5;
+  width: 100%;
+  margin-bottom: 1rem;
+  padding: 0.25rem 0.75rem;
+  border-radius: 5px;
+}
+.formulario__form button {
+  background: linear-gradient(90deg, #ff6600 0%, #ff9900 100%);
+  margin: 0 auto;
+  color: rgb(255, 255, 255);
+  text-transform: uppercase;
+  padding: 0.5rem 0;
+  width: 100%;
+  font-family: "Lato", sans-serif;
+  border-radius: 5rem;
 }
 
 /*
