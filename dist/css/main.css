@@ -718,7 +718,8 @@ FAQ
   color: #ff6600;
   text-align: center;
 }
-.faq button {
+
+.hc-answer-content button {
   background: linear-gradient(90deg, #ff6600 0%, #ff9900 100%);
   margin: 0 auto;
   color: rgb(255, 255, 255);

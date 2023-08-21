@@ -304,6 +304,8 @@ FAQ
       @include parrafo($tipo__titulos,clamp(1.5rem,1vw,2rem), 900, $color__naranja);
       text-align: center;
   }
+}
+.hc-answer-content{
   button{
        @include gradiente (linear-gradient, $color__naranja, $color__naranja__alt);
        margin: 0 auto;
@@ -315,8 +317,8 @@ FAQ
        border-radius: 5rem;
 
     }
-}
 
+}
 .hc-question{
   border: 1px solid $color__gris__claro;
   border-radius: 0.25rem;
