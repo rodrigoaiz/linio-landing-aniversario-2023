@@ -17,12 +17,12 @@ Fuentes
 ––––––––––––––––––––––––––––––––––––––––––––––––––
 **************************************************
 */
-$espacio__secciones:4rem;
+$espacio__secciones:2rem;
 $tipo__titulos: 'Lato', sans-serif;
 $tipo__textos: 'Lato', sans-serif;
 body{
   font-family: $tipo__textos;
-  font-size: clamp(1.15rem, 1vw, 1em);
+  font-size: clamp(1.5rem, 1vw, 1em);
 }
 em{
   font-style: italic;
@@ -35,8 +35,13 @@ strong{
   font-weight: 700;
 }
 p{
-  line-height: clamp(1.7rem, 1.7vw, 1.9rem);
+  line-height: clamp(1.6em, 1.7vw, 1.9rem);
   font-family: $tipo__textos;
+  font-size: clamp(1.05em, 1vw, 1em);
+  margin-bottom: 1em;
+}
+p:last-child{
+  margin-bottom:0;
 }
 .text-center{
   text-align: center;
@@ -69,6 +74,10 @@ Flotante
     width: 9rem;
     height: 4rem;
     cursor: pointer;
+    @include media (992px){
+      top: 0.5em;
+    }
+
     :hover{
       opacity: .8;
       padding-bottom: 0.5rem;
@@ -100,6 +109,9 @@ Flotante
   right: 0;
   transition: all 0.5s ease;
   z-index: 999;
+  @include media(992px){
+    top: 1em
+  }
 }
 /*
 **************************************************
@@ -112,18 +124,34 @@ Hero
 .hero{
   @include flex(flex, row, wrap, center, space-evenly);
   min-height: 19rem;
-  background-image: url("../img/circulos-fondo.webp"), url("../img/notas-musicales.webp"),linear-gradient(90deg, $color__aniversario__naranja 0%, $color__aniversario__rosa 50%, $color__aniversario__naranja 100%);
+  @include media (576px){
+    min-height: 60vh;
+     @include flex(flex, row, wrap, center, end);
+  }
+  @media (min-width:577px) and (max-width:991px){
+    min-height: 70vh;
+
+  }
+  background-image: url("../img/circulos-fondo.webp"), url("../img/notas-musicales.webp"),linear-gradient(90deg, $color__aniversario__rosa 0%, $color__aniversario__naranja 50%, $color__aniversario__rosa 100%);
   background-position: center center, center center, center center;
   background-repeat: no-repeat, no-repeat, no-repeat;
+  img{
+    max-width: 90%;
+    margin: 0 auto;
+  }
   &__h2{
     @include titulo-tamano();
     color: $color__blanco;
     font-size: clamp(2.5rem, 2vw, 3rem);
   }
   &__h3{
-    @include parrafo($tipo__textos,clamp(1.5rem,1vw,2rem), 400, $color__blanco);
+    @include parrafo($tipo__textos,clamp(1.2em,1.6vw,2rem), 400, $color__blanco);
     text-align: center;
     width: 75%;
+    @include media(576px){
+      width: 95%;
+      margin-top: 5rem;
+    }
   }
 }
 
@@ -135,22 +163,30 @@ Que son
 **************************************************
 */
 .queson{
-  margin-top: $espacio__secciones;
+
   &__texto{
-    @include flex(flex, row, wrap, center, space-evenly);
+    @include flex(flex, row, wrap, center, center);
     background-color: $color__gris__claro;
     background-image: url("../img/medio-circulo-gris.webp");
     background-size: auto 100%;
     background-repeat: no-repeat;
     padding: 5rem 0;
+    @include media(992px){
+      padding: 1em 0;
+    }
     h2{
       font-weight: 900;
       text-align: center;
+      font-size: clamp(1.9em, 1.5vw, 1.5em);
+      margin-bottom: 1em;
     }
     p{
-      margin-bottom: 0;
       padding:0 2rem;
+      @include media(992px){
+        padding: 1em;
+      }
     }
+
     .lead{
       @include parrafo($tipo__titulos,clamp(1.5rem,1vw,2rem), 900, $color__negro);
 
@@ -172,15 +208,14 @@ Donde son
 **************************************************
 */
 .donde{
-  margin-top: $espacio__secciones;
+
   &__texto{
-    @include flex(flex, row, wrap, center, space-evenly);
+    @include flex(flex, row, wrap, center, center);
     h2{
       font-weight: 900;
       text-align: center;
-    }
-    p{
-      margin-bottom: 0;
+      font-size: clamp(1.9em, 1.5vw, 1.5em);
+      margin-bottom: 1em;
     }
     .lead{
       @include parrafo($tipo__titulos,clamp(1.5rem,1vw,2rem), 900, $color__negro);
@@ -188,6 +223,9 @@ Donde son
     }
   }
   &__imagen{
+    @include media(992px){
+        padding-top: 2em;
+      }
     &__bloque{
       min-height: 100%;
       min-width: 100%;
@@ -207,17 +245,21 @@ Porque
 **************************************************
 */
 .porque{
-  margin-top: $espacio__secciones;
+
   background-color: $color__gris__claro;
   &__texto{
     min-height: 20rem;
-    @include flex(flex, row, wrap, center, space-evenly);
+    @include flex(flex, row, wrap, center, center);
+    @include media(992px){
+      min-height: auto;
+      padding: 1em 0;
+      p{
+        padding: 0 1em;
+      }
+    }
     h2{
       font-weight: 900;
       text-align: center;
-    }
-    p{
-      margin-bottom: 0;
     }
     .lead{
       @include parrafo($tipo__titulos,clamp(1.5rem,1vw,2rem), 900, $color__negro);
@@ -259,7 +301,7 @@ formulario
 */
 
 .formulario{
-  margin-top: $espacio__secciones;
+
   h2{
       @include parrafo($tipo__titulos,clamp(1.5rem,1vw,2rem), 900, $color__naranja);
       text-align: center;
@@ -267,6 +309,9 @@ formulario
   &__form{
     width: 50%;
     margin:0 auto;
+    @include media(992px){
+      width: 100%;
+    }
     input{
       border: 1px solid $color__gris__oscuro;
       width: 100%;
@@ -296,7 +341,7 @@ FAQ
 */
 
 .faq{
-  margin-top: $espacio__secciones;
+
   article{
     margin-bottom: 1rem;
   }
@@ -338,67 +383,8 @@ FAQ
     }
   }
 }
-/*
-**************************************************
-––––––––––––––––––––––––––––––––––––––––––––––––––
-Header
-––––––––––––––––––––––––––––––––––––––––––––––––––
-**************************************************
-*/
-.header{
-/*   background: $gradient__naranja__linear; */
-  &__navbar{
-    @include flex(flex, row, wrap, center, center);
-    width: 100%;
-    max-height: 10rem;
-    position: fixed;
-    z-index: 5;
-    border-radius:0;
-    margin:0;
-    //padding: 2em;
-    top: 0;
-    @include media(659px) {
-      padding-top:0.1rem;
-    }
-    @include media(390px){
-      @include flex(flex, row, wrap, center, center);
-      min-height: 4em;
-      padding: 0;
-
-    }
-    &__ul{
-      @include flex(flex, row, wrap, center, center);
-      li:first-child{
-        margin-left: 0;
-      }
-      li{
-        @include parrafo($tipo__titulos,clamp(0.8rem,1.25vw,2rem), 700, $color__blanco);
-        text-transform: uppercase;
-        //margin-left: 3em;
-        padding: 0.5rem 0.9rem;
-        transition: all 0.5s ease;
-        cursor: pointer;
-        &:hover{
-          background-color:$color__morado;
-        }
-        @include media(370px){
-          margin-left: 1rem;
-        }
-      }
-    }
-    &__logo{
-      max-height: 5em;
-      @include media(320px){
-        display: none;
-      }
-      @include media(800px){
-       max-height: 2.5em;
-      }
-      &:hover{
-        transition: all 0.5s ease;
-        opacity: 0.8;
-      }
-    }
+.accordion-header{
+  button{
+    @include parrafo($tipo__titulos, 1rem, 900, $color__negro);
   }
-
 }
