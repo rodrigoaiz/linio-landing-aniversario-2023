@@ -46,73 +46,8 @@ p:last-child{
 .text-center{
   text-align: center;
 }
-/*
-**************************************************
-––––––––––––––––––––––––––––––––––––––––––––––––––
-Flotante
-––––––––––––––––––––––––––––––––––––––––––––––––––
-**************************************************
-*/
-.flotante{
 
-  position:relative;
-  left:0px;
-  top:0px;
-  width: 100%;
-  height: 100%;
-  a{
-    text-decoration: none;
-    color: $color__blanco;
-  }
-  &__boton{
-    @include gradiente(linear-gradient, $color__naranja, $color__naranja__alt);
-    @include flex(flex, row, wrap, left, space-evenly);
-    border-radius: 5rem;
-    position: absolute;
-    top: 14.5rem;
-    right: 0.5rem;
-    width: 9rem;
-    height: 4rem;
-    cursor: pointer;
-    @include media (992px){
-      top: 0.5em;
-    }
 
-    :hover{
-      opacity: .8;
-      padding-bottom: 0.5rem;
-      transition: all 0.5s ease;
-    }
-    span{
-      max-width: 50%;
-      text-align: right;
-      font-size: 0.75rem
-    }
-    ::before{
-      content: "";
-      background-image: url("../img/down-solid.webp"),linear-gradient(90deg, $color__naranja__alt 0%, $color__naranja 100%);
-      background-position: center center;
-      background-size: cover;
-      background-repeat: no-repeat;
-      width: 4rem;
-      height: 4rem;
-      border-radius: 5rem;
-      position: absolute;
-      top:0;
-      right: 0;
-    }
-  }
-}
-.flotante-down {
-  position: sticky ;
-  top: -14rem;
-  right: 0;
-  transition: all 0.5s ease;
-  z-index: 999;
-  @include media(992px){
-    top: 1em
-  }
-}
 /*
 **************************************************
 ––––––––––––––––––––––––––––––––––––––––––––––––––
@@ -140,9 +75,8 @@ Hero
     margin: 0 auto;
   }
   &__h2{
-    @include titulo-tamano();
+    @include titulo(clamp(2.5rem, 2vw, 3rem));
     color: $color__blanco;
-    font-size: clamp(2.5rem, 2vw, 3rem);
   }
   &__h3{
     @include parrafo($tipo__textos,clamp(1.2em,1.6vw,2rem), 400, $color__blanco);
@@ -158,180 +92,111 @@ Hero
 /*
 **************************************************
 ––––––––––––––––––––––––––––––––––––––––––––––––––
-Que son
+Como ganar
 ––––––––––––––––––––––––––––––––––––––––––––––––––
 **************************************************
 */
-.queson{
-
-  &__texto{
-    @include flex(flex, row, wrap, center, center);
-    background-color: $color__gris__claro;
-    background-image: url("../img/medio-circulo-gris.webp");
-    background-size: auto 100%;
-    background-repeat: no-repeat;
-    padding: 5rem 0;
-    @include media(992px){
-      padding: 1em 0;
-    }
-    h2{
-      font-weight: 900;
-      text-align: center;
-      font-size: clamp(1.9em, 1.5vw, 1.5em);
-      margin-bottom: 1em;
-    }
-    p{
-      padding:0 2rem;
-      @include media(992px){
-        padding: 1em;
-      }
-    }
-
-    .lead{
-      @include parrafo($tipo__titulos,clamp(1.5rem,1vw,2rem), 900, $color__negro);
-
+.comoganar{
+  &__h2{
+    @include titulo(clamp(2.5rem, 2vw, 3rem));
+    color: $color__negro;
+    margin-bottom: 2rem;
+  }
+  @include media(767px){
+    &__slide::before{
+      content: "👉";
+      position: absolute;
+      top:0;
+      right: 0.5rem;
+      font-size: 2rem;
     }
   }
-   &__imagen{
-    background-image: url("../img/fondo-grammys.webp") ;
-    background-position: center center;
-    background-repeat: no-repeat;
-    min-height: 35vh;
-   }
-}
+  &__slide{
 
-/*
-**************************************************
-––––––––––––––––––––––––––––––––––––––––––––––––––
-Donde son
-––––––––––––––––––––––––––––––––––––––––––––––––––
-**************************************************
-*/
-.donde{
-
-  &__texto{
-    @include flex(flex, row, wrap, center, center);
-    h2{
-      font-weight: 900;
-      text-align: center;
-      font-size: clamp(1.9em, 1.5vw, 1.5em);
-      margin-bottom: 1em;
-    }
-    .lead{
-      @include parrafo($tipo__titulos,clamp(1.5rem,1vw,2rem), 900, $color__negro);
-
-    }
-  }
-  &__imagen{
-    @include media(992px){
-        padding-top: 2em;
-      }
-    &__bloque{
-      min-height: 100%;
-      min-width: 100%;
+    padding: 2rem 0;
+    @include flex(flex, row, wrap, center, space-evenly);
+    @include gradiente (linear-gradient, $color__aniversario__rosa, $color__aniversario__naranja);
+    @include media(767px){
+      @include flex(flex, row, nowrap, left, center);
+      overflow-y: scroll;
       position: relative;
-      top: 0;
-      right: 0;
-      background: $gradient__naranja__linear;
-      border-radius: 20rem 0 0 20rem;
+    }
+    &__article{
+      width: 20%;
+
+      text-align: center;
+       @include parrafo($tipo__titulos,clamp(1.5rem,1vw,2rem), 400, $color__blanco);
+       @include media(767px){
+         min-width: 100%;
+       }
+    }
+    &__article:last-child{
+      margin-right: 0;
+    }
+     &__icon{
+      background-color: $color__blanco;
+      height: 10rem;
+      width: 10rem;
+      margin: 0 auto;
+      border-radius: 20rem;
+      color: $color__negro;
+      @include flex(flex, row, wrap, center, center);
+      svg{
+        height: 3em;
+      }
+    }
+    &__foot{
+      margin-top: 2rem;
+      @include parrafo($tipo__titulos,clamp(1.5rem,1vw,2rem), 400, $color__blanco);
+      text-align: center;
+      @include media(767px){
+         display: none;
+       }
+    }
+  }
+  &__foot{
+    margin-top: 2rem;
+    @include parrafo($tipo__titulos,clamp(1.5rem,1vw,2rem), 400, $color__aniversario__rosa);
+    text-align: center;
+    @include mediadelante(767px){
+      display: none;
     }
   }
 }
 /*
 **************************************************
 ––––––––––––––––––––––––––––––––––––––––––––––––––
-Porque
+Si ganas
 ––––––––––––––––––––––––––––––––––––––––––––––––––
 **************************************************
 */
-.porque{
-
-  background-color: $color__gris__claro;
-  &__texto{
-    min-height: 20rem;
-    @include flex(flex, row, wrap, center, center);
-    @include media(992px){
-      min-height: auto;
-      padding: 1em 0;
-      p{
-        padding: 0 1em;
-      }
-    }
-    h2{
-      font-weight: 900;
-      text-align: center;
-    }
-    .lead{
-      @include parrafo($tipo__titulos,clamp(1.5rem,1vw,2rem), 900, $color__negro);
-
-    }
+.siganas{
+  max-width: 80%;
+  margin: 2rem auto;
+  &__h2{
+    @include titulo(clamp(2.5rem, 2vw, 3rem));
+    color: $color__negro;
+    margin-bottom: 2rem;
   }
-  &__imagen{
-    &__bloque{
-      min-height: 100%;
-      min-width: 100%;
-      position: relative;
-      top: 0;
-      right: 0;
-      background: $gradient__naranja__linear;
-      border-radius: 0 20rem 20rem 0;
-      @include flex(flex, row, wrap, center, space-evenly);
-      span{
-        width: 100%;
-        text-align: center;
-        font-size: 4rem;
-      }
-      h2{
-        @include parrafo($tipo__titulos,2rem,900,$color__blanco);
-        max-width: 65%;
-        text-align: center;
-      }
+  p{
+    @include parrafo($tipo__titulos,clamp(1.5rem,1vw,2rem), 900, $color__negro);
+  }
+  &__lead{
+    text-align: center;
+    @include titulo(clamp(1.5rem, 1.7vw, 1.7rem));
+    color: $color__negro;
+  }
+  ul{
+    li{
+      list-style: disc;
+      @include parrafo($tipo__titulos,clamp(1.2rem,1.4vw,1.5rem), 400, $color__negro);
+    }
+    li::marker{
+      color:$color__naranja;
+      font-size: 1.5em;
     }
   }
 }
-
-
-
-/*
-**************************************************
-––––––––––––––––––––––––––––––––––––––––––––––––––
-formulario
-––––––––––––––––––––––––––––––––––––––––––––––––––
-**************************************************
-*/
-
-.formulario{
-
-  h2{
-      @include parrafo($tipo__titulos,clamp(1.5rem,1vw,2rem), 900, $color__naranja);
-      text-align: center;
-  }
-  &__form{
-    width: 50%;
-    margin:0 auto;
-    @include media(992px){
-      width: 100%;
-    }
-    input{
-      border: 1px solid $color__gris__oscuro;
-      width: 100%;
-      margin-bottom: 1rem;
-      padding: 0.25rem 0.75rem;
-      border-radius: 5px;
-    }
-    button{
-       @include gradiente (linear-gradient, $color__naranja, $color__naranja__alt);
-       margin: 0 auto;
-       color: $color__blanco;
-       text-transform: uppercase;
-       padding: 0.5rem 0;
-       width: 100%;
-       font-family: $tipo__titulos;
-       border-radius: 5rem;
-    }
-  }
-}
-
 /*
 **************************************************
 ––––––––––––––––––––––––––––––––––––––––––––––––––
@@ -346,11 +211,11 @@ FAQ
     margin-bottom: 1rem;
   }
   h2{
-      @include parrafo($tipo__titulos,clamp(1.5rem,1vw,2rem), 900, $color__naranja);
-      text-align: center;
+    a{
+        @include parrafo($tipo__titulos,clamp(1.2rem,1.5vw,1.6rem), 900, $color__negro);
+        padding-left: 2rem;
+      }
   }
-}
-.hc-answer-content{
   button{
        @include gradiente (linear-gradient, $color__naranja, $color__naranja__alt);
        margin: 0 auto;
@@ -362,29 +227,9 @@ FAQ
        border-radius: 5rem;
 
     }
+}
 
-}
-.hc-question{
-  border: 1px solid $color__gris__claro;
-  border-radius: 0.25rem;
-  padding: 0.5rem;
-  h2{
-    text-align: left;
-    ::before{
-      content: "+";
-      border: 1px solid;
-      border-radius: 2rem;
-      padding:0.05rem 0.5rem;
-      margin-right: 0.5rem;
-    }
-    a{
-      color:$color__negro;
-      text-decoration: none;
-    }
-  }
-}
-.accordion-header{
-  button{
-    @include parrafo($tipo__titulos, 1rem, 900, $color__negro);
-  }
+.accordion-button{
+  background-color:$color__gris__claro !important;
+  text-decoration: none !important;
 }

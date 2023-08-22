@@ -414,6 +414,69 @@ p:last-child {
 /*
 **************************************************
 ––––––––––––––––––––––––––––––––––––––––––––––––––
+Flotante
+––––––––––––––––––––––––––––––––––––––––––––––––––
+**************************************************
+*/
+.flotante {
+  position: relative;
+  left: 0px;
+  top: 0px;
+  width: 100%;
+  height: 100%; }
+  .flotante a {
+    text-decoration: none;
+    color: white; }
+  .flotante__boton {
+    background: linear-gradient(90deg, #ff6600 0%, #ff9900 100%);
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: left;
+    align-content: space-evenly;
+    border-radius: 5rem;
+    position: absolute;
+    top: 14.5rem;
+    right: 0.5rem;
+    width: 9rem;
+    height: 4rem;
+    cursor: pointer; }
+    @media screen and (max-width: 992px) {
+      .flotante__boton {
+        top: 0.5em; } }
+    .flotante__boton :hover {
+      opacity: .8;
+      padding-bottom: 0.5rem;
+      transition: all 0.5s ease; }
+    .flotante__boton span {
+      max-width: 50%;
+      text-align: right;
+      font-size: 0.75rem; }
+    .flotante__boton ::before {
+      content: "";
+      background-image: url("../img/down-solid.webp"), linear-gradient(90deg, #ff9900 0%, #ff6600 100%);
+      background-position: center center;
+      background-size: cover;
+      background-repeat: no-repeat;
+      width: 4rem;
+      height: 4rem;
+      border-radius: 5rem;
+      position: absolute;
+      top: 0;
+      right: 0; }
+
+.flotante-down {
+  position: sticky;
+  top: -14rem;
+  right: 0;
+  transition: all 0.5s ease;
+  z-index: 999; }
+  @media screen and (max-width: 992px) {
+    .flotante-down {
+      top: 1em; } }
+
+/*
+**************************************************
+––––––––––––––––––––––––––––––––––––––––––––––––––
 Hero
 ––––––––––––––––––––––––––––––––––––––––––––––––––
 **************************************************
@@ -462,126 +525,165 @@ Hero
 /*
 **************************************************
 ––––––––––––––––––––––––––––––––––––––––––––––––––
-Como ganar
+Que son
 ––––––––––––––––––––––––––––––––––––––––––––––––––
 **************************************************
 */
-.comoganar__h2 {
-  font-family: "Lato", sans-serif;
-  font-weight: 900;
-  text-align: center;
-  font-size: clamp(2.5rem, 2vw, 3rem);
-  color: #2b2b2b;
-  color: #2b2b2b;
-  margin-bottom: 2rem; }
-@media screen and (max-width: 767px) {
-  .comoganar__slide::before {
-    content: "👉";
-    position: absolute;
-    top: 0;
-    right: 0.5rem;
-    font-size: 2rem; } }
-.comoganar__slide {
-  padding: 2rem 0;
+.queson__texto {
   display: flex;
   flex-flow: row wrap;
   justify-content: center;
-  align-content: space-evenly;
-  background: linear-gradient(90deg, #FF3153 0%, #FF5E15 100%); }
-  @media screen and (max-width: 767px) {
-    .comoganar__slide {
-      display: flex;
-      flex-flow: row nowrap;
-      justify-content: left;
-      align-items: center;
-      overflow-y: scroll;
-      position: relative; } }
-  .comoganar__slide__article {
-    width: 20%;
+  align-content: center;
+  background-color: #ebf0f5;
+  background-image: url("../img/medio-circulo-gris.webp");
+  background-size: auto 100%;
+  background-repeat: no-repeat;
+  padding: 5rem 0; }
+  @media screen and (max-width: 992px) {
+    .queson__texto {
+      padding: 1em 0; } }
+  .queson__texto h2 {
+    font-weight: 900;
     text-align: center;
+    font-size: clamp(1.9em, 1.5vw, 1.5em);
+    margin-bottom: 1em; }
+  .queson__texto p {
+    padding: 0 2rem; }
+    @media screen and (max-width: 992px) {
+      .queson__texto p {
+        padding: 1em; } }
+  .queson__texto .lead {
     font-family: "Lato", sans-serif;
     font-size: clamp(1.5rem, 1vw, 2rem);
-    font-weight: 400;
-    color: white; }
-    @media screen and (max-width: 767px) {
-      .comoganar__slide__article {
-        min-width: 100%; } }
-  .comoganar__slide__article:last-child {
-    margin-right: 0; }
-  .comoganar__slide__icon {
-    background-color: white;
-    height: 10rem;
-    width: 10rem;
-    margin: 0 auto;
-    border-radius: 20rem;
-    color: #2b2b2b;
-    display: flex;
-    flex-flow: row wrap;
-    justify-content: center;
-    align-content: center; }
-    .comoganar__slide__icon svg {
-      height: 3em; }
-  .comoganar__slide__foot {
-    margin-top: 2rem;
-    font-family: "Lato", sans-serif;
-    font-size: clamp(1.5rem, 1vw, 2rem);
-    font-weight: 400;
-    color: white;
-    text-align: center; }
-    @media screen and (max-width: 767px) {
-      .comoganar__slide__foot {
-        display: none; } }
-.comoganar__foot {
-  margin-top: 2rem;
-  font-family: "Lato", sans-serif;
-  font-size: clamp(1.5rem, 1vw, 2rem);
-  font-weight: 400;
-  color: #FF3153;
-  text-align: center; }
-  @media screen and (min-width: 767px) {
-    .comoganar__foot {
-      display: none; } }
+    font-weight: 900;
+    color: #2b2b2b; }
+.queson__imagen {
+  background-image: url("../img/fondo-grammys.webp");
+  background-position: center center;
+  background-repeat: no-repeat;
+  min-height: 35vh; }
 
 /*
 **************************************************
 ––––––––––––––––––––––––––––––––––––––––––––––––––
-Si ganas
+Donde son
 ––––––––––––––––––––––––––––––––––––––––––––––––––
 **************************************************
 */
-.siganas {
-  max-width: 80%;
-  margin: 2rem auto; }
-  .siganas__h2 {
-    font-family: "Lato", sans-serif;
+.donde__texto {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  align-content: center; }
+  .donde__texto h2 {
     font-weight: 900;
     text-align: center;
-    font-size: clamp(2.5rem, 2vw, 3rem);
-    color: #2b2b2b;
-    color: #2b2b2b;
-    margin-bottom: 2rem; }
-  .siganas p {
+    font-size: clamp(1.9em, 1.5vw, 1.5em);
+    margin-bottom: 1em; }
+  .donde__texto .lead {
     font-family: "Lato", sans-serif;
     font-size: clamp(1.5rem, 1vw, 2rem);
     font-weight: 900;
     color: #2b2b2b; }
-  .siganas__lead {
-    text-align: center;
+@media screen and (max-width: 992px) {
+  .donde__imagen {
+    padding-top: 2em; } }
+.donde__imagen__bloque {
+  min-height: 100%;
+  min-width: 100%;
+  position: relative;
+  top: 0;
+  right: 0;
+  background: linear-gradient(90deg, #ff6600 0%, #ff9900 100%);
+  border-radius: 20rem 0 0 20rem; }
+
+/*
+**************************************************
+––––––––––––––––––––––––––––––––––––––––––––––––––
+Porque
+––––––––––––––––––––––––––––––––––––––––––––––––––
+**************************************************
+*/
+.porque {
+  background-color: #ebf0f5; }
+  .porque__texto {
+    min-height: 20rem;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-content: center; }
+    @media screen and (max-width: 992px) {
+      .porque__texto {
+        min-height: auto;
+        padding: 1em 0; }
+        .porque__texto p {
+          padding: 0 1em; } }
+    .porque__texto h2 {
+      font-weight: 900;
+      text-align: center; }
+    .porque__texto .lead {
+      font-family: "Lato", sans-serif;
+      font-size: clamp(1.5rem, 1vw, 2rem);
+      font-weight: 900;
+      color: #2b2b2b; }
+  .porque__imagen__bloque {
+    min-height: 100%;
+    min-width: 100%;
+    position: relative;
+    top: 0;
+    right: 0;
+    background: linear-gradient(90deg, #ff6600 0%, #ff9900 100%);
+    border-radius: 0 20rem 20rem 0;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-content: space-evenly; }
+    .porque__imagen__bloque span {
+      width: 100%;
+      text-align: center;
+      font-size: 4rem; }
+    .porque__imagen__bloque h2 {
+      font-family: "Lato", sans-serif;
+      font-size: 2rem;
+      font-weight: 900;
+      color: white;
+      max-width: 65%;
+      text-align: center; }
+
+/*
+**************************************************
+––––––––––––––––––––––––––––––––––––––––––––––––––
+formulario
+––––––––––––––––––––––––––––––––––––––––––––––––––
+**************************************************
+*/
+.formulario h2 {
+  font-family: "Lato", sans-serif;
+  font-size: clamp(1.5rem, 1vw, 2rem);
+  font-weight: 900;
+  color: #ff6600;
+  text-align: center; }
+.formulario__form {
+  width: 50%;
+  margin: 0 auto; }
+  @media screen and (max-width: 992px) {
+    .formulario__form {
+      width: 100%; } }
+  .formulario__form input {
+    border: 1px solid #494e58;
+    width: 100%;
+    margin-bottom: 1rem;
+    padding: 0.25rem 0.75rem;
+    border-radius: 5px; }
+  .formulario__form button {
+    background: linear-gradient(90deg, #ff6600 0%, #ff9900 100%);
+    margin: 0 auto;
+    color: white;
+    text-transform: uppercase;
+    padding: 0.5rem 0;
+    width: 100%;
     font-family: "Lato", sans-serif;
-    font-weight: 900;
-    text-align: center;
-    font-size: clamp(1.5rem, 1.7vw, 1.7rem);
-    color: #2b2b2b;
-    color: #2b2b2b; }
-  .siganas ul li {
-    list-style: disc;
-    font-family: "Lato", sans-serif;
-    font-size: clamp(1.2rem, 1.4vw, 1.5rem);
-    font-weight: 400;
-    color: #2b2b2b; }
-  .siganas ul li::marker {
-    color: #ff6600;
-    font-size: 1.5em; }
+    border-radius: 5rem; }
 
 /*
 **************************************************
@@ -592,13 +694,14 @@ FAQ
 */
 .faq article {
   margin-bottom: 1rem; }
-.faq h2 a {
+.faq h2 {
   font-family: "Lato", sans-serif;
-  font-size: clamp(1.2rem, 1.5vw, 1.6rem);
+  font-size: clamp(1.5rem, 1vw, 2rem);
   font-weight: 900;
-  color: #2b2b2b;
-  padding-left: 2rem; }
-.faq button {
+  color: #ff6600;
+  text-align: center; }
+
+.hc-answer-content button {
   background: linear-gradient(90deg, #ff6600 0%, #ff9900 100%);
   margin: 0 auto;
   color: white;
@@ -607,8 +710,26 @@ FAQ
   font-family: "Lato", sans-serif;
   border-radius: 5rem; }
 
-.accordion-button {
-  background-color: #ebf0f5 !important;
-  text-decoration: none !important; }
+.hc-question {
+  border: 1px solid #ebf0f5;
+  border-radius: 0.25rem;
+  padding: 0.5rem; }
+  .hc-question h2 {
+    text-align: left; }
+    .hc-question h2 ::before {
+      content: "+";
+      border: 1px solid;
+      border-radius: 2rem;
+      padding: 0.05rem 0.5rem;
+      margin-right: 0.5rem; }
+    .hc-question h2 a {
+      color: #2b2b2b;
+      text-decoration: none; }
 
-/*# sourceMappingURL=main.css.map */
+.accordion-header button {
+  font-family: "Lato", sans-serif;
+  font-size: 1rem;
+  font-weight: 900;
+  color: #2b2b2b; }
+
+/*# sourceMappingURL=main%20copy.css.map */

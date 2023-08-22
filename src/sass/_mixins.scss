@@ -1,7 +1,9 @@
-@mixin titulo-tamano {
+@mixin titulo ($size){
     font-family: $tipo__titulos;
     font-weight:900;
     text-align: center;
+    font-size: $size;
+    color: $color__negro;
 }
 @mixin parrafo ($font, $size, $grosor, $color) {
   font-family:$font;
