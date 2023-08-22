@@ -67,7 +67,8 @@ Hero
     min-height: 70vh;
 
   }
-  background-image: url("../img/circulos-fondo.webp"), url("../img/notas-musicales.webp"),linear-gradient(90deg, $color__aniversario__rosa 0%, $color__aniversario__naranja 50%, $color__aniversario__rosa 100%);
+  /* background-image: url("../img/circulos-fondo.webp"), url("../img/notas-musicales.webp"),linear-gradient(90deg, $color__aniversario__rosa 0%, $color__aniversario__naranja 50%, $color__aniversario__rosa 100%); */
+  background-color: black;
   background-position: center center, center center, center center;
   background-repeat: no-repeat, no-repeat, no-repeat;
   img{

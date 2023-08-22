@@ -424,7 +424,8 @@ Hero
   justify-content: center;
   align-content: space-evenly;
   min-height: 19rem;
-  background-image: url("../img/circulos-fondo.webp"), url("../img/notas-musicales.webp"), linear-gradient(90deg, #FF3153 0%, #FF5E15 50%, #FF3153 100%);
+  /* background-image: url("../img/circulos-fondo.webp"), url("../img/notas-musicales.webp"),linear-gradient(90deg, $color__aniversario__rosa 0%, $color__aniversario__naranja 50%, $color__aniversario__rosa 100%); */
+  background-color: black;
   background-position: center center, center center, center center;
   background-repeat: no-repeat, no-repeat, no-repeat; }
   @media screen and (max-width: 576px) {
