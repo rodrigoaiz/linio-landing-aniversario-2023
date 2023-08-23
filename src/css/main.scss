@@ -57,39 +57,77 @@ Hero
 */
 
 .hero{
-  @include flex(flex, row, wrap, center, space-evenly);
-  min-height: 19rem;
-  @include media (576px){
-    min-height: 60vh;
-     @include flex(flex, row, wrap, center, end);
-  }
-  @media (min-width:577px) and (max-width:991px){
-    min-height: 70vh;
-
-  }
-  /* background-image: url("../img/circulos-fondo.webp"), url("../img/notas-musicales.webp"),linear-gradient(90deg, $color__aniversario__rosa 0%, $color__aniversario__naranja 50%, $color__aniversario__rosa 100%); */
-  background-position: center center, center center, center center;
-  background-repeat: no-repeat, no-repeat, no-repeat;
-  img{
-    max-width: 100%;
-    margin: 0 auto;
-  }
-  &__h2{
-    @include titulo(clamp(2.5rem, 2vw, 3rem));
-    color: $color__blanco;
-  }
-  &__h3{
-    @include parrafo($tipo__textos,clamp(1.5em,1.6vw,2rem), 400, $color__negro);
-    text-align: center;
-    width: 100%;
-    margin-top: 1rem;
-    margin-bottom:2rem;
-    p{
-      margin: 0;
+  @include flex(flex, row, nowrap, space-between, end);
+  padding: 1rem;
+  background-image: url("../img/fondo-hero.webp");
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  &__celebremos-left{
+    @include media (767px){
+      display: none;
     }
   }
+  &__celebremos-center{
+    display: none;
+    min-width: 80%;
+    @include media (767px){
+      display: inline-flex;
+    }
+  }
+  @include media (767px){
+    min-height: 60vh;
+    @include flex(flex, row, wrap, center, center);
+     background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../img/fondo-hero.webp");
+  }
+  &__article{
+    max-width: 30%;
+    @include media (767px){
+      min-width: 100%;
+      text-align: center;
+    }
+    img{
+      max-width:100% ;
+      @include media (767px){
+        max-width: 50%;
+      }
+    }
+    p{
+      color: $color__blanco;
+    }
+  }
+
+  &__article:last-child{
+    max-width: 15%;
+    @include media (767px){
+      margin-top: 2rem;
+      img{
+        max-width: 30%;
+      }
+    }
+  }
+
+
+
 }
 
+/*
+**************************************************
+––––––––––––––––––––––––––––––––––––––––––––––––––
+Tus compras
+––––––––––––––––––––––––––––––––––––––––––––––––––
+**************************************************
+*/
+.tuscompras{
+  max-width: 100%;
+  margin: 2rem auto;
+  @include parrafo($tipo__textos,clamp(1.8em,2vw,2em), 400, $color__negro);
+  text-align: center;
+  width: 100%;
+  p:first-child{
+    margin-bottom: 1rem;
+  }
+}
 
 /*
 **************************************************
