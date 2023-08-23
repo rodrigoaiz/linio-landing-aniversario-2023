@@ -78,7 +78,7 @@ Hero
   @include media (767px){
 
     @include flex(flex, row, wrap, center, center);
-     background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.05)), url("../img/fondo-hero.webp");
+     background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.05)), url("../img/fondo-hero.webp");
   }
   &__article{
     max-width: 30%;
@@ -124,11 +124,17 @@ Tus compras
 .tuscompras{
   max-width: 100%;
   margin: 2rem auto;
+  @include media (767px){
+    margin: 0.5rem auto 1rem;
+  }
   @include parrafo($tipo__textos,clamp(1.2em,2vw,2em), 400, $color__negro);
   text-align: center;
   width: 100%;
   p:first-child{
     margin-bottom: 1rem;
+     @include media (767px){
+      margin-bottom: 0.3rem;
+     }
   }
 }
 
@@ -141,9 +147,12 @@ Como ganar
 */
 .comoganar{
   &__h2{
-    @include titulo(clamp(1.7em, 2.5vw, 3rem));
+    @include titulo(clamp(1.3em, 2.5vw, 3rem));
     color: $color__negro;
     margin-bottom: 2rem;
+    @include media (767px){
+      margin-bottom: 0.5rem;
+    }
   }
   @include media(767px){
     &__slide::before{
@@ -190,6 +199,7 @@ Como ganar
     }
     &__foot{
       margin-top: 2rem;
+
       @include parrafo($tipo__titulos,clamp(1.5rem,1vw,2rem), 400, $color__blanco);
       text-align: center;
       @include media(767px){
@@ -201,7 +211,10 @@ Como ganar
     margin-top: 2rem;
     @include parrafo($tipo__titulos,clamp(1.5rem,1vw,2rem), 400, $color__aniversario__rosa);
     text-align: center;
-    @include mediadelante(767px){
+    @include media(767px){
+      margin-top: 0.5rem;
+    }
+    @include mediadelante(768px){
       display: none;
     }
   }
@@ -216,8 +229,11 @@ donde
 */
 .donde{
   max-width: 80%;
-  margin: 3rem auto;
-  @include parrafo($tipo__textos,clamp(1.3em,1.4vw,1.6rem), 400, $color__negro);
+  margin: 1.5rem auto;
+  @include media(767px){
+     margin: 0.9rem auto;
+  }
+  @include parrafo($tipo__textos,clamp(1.2em,1.4vw,1.6rem), 400, $color__negro);
   text-align: center;
   width: 100%;
   p:first-child{
@@ -234,7 +250,7 @@ Si ganas
 */
 .siganas{
   width: 100%;
-  margin: 2rem auto;
+ /* margin: 2rem auto;*/
   background-color: $color__gris__claro;
   padding: 2rem 0;
   &__wrapper{
@@ -243,9 +259,12 @@ Si ganas
   }
 
   &__h2{
-    @include titulo(clamp(2rem, 2vw, 2.5rem));
+    @include titulo(clamp(1.6rem, 2vw, 2.5rem));
     color: $color__negro;
     margin-bottom: 2rem;
+    @include media(767px){
+      margin-bottom: 0.5rem;
+    }
   }
   p{
     @include parrafo($tipo__titulos,clamp(1.5rem,1vw,2rem), 900, $color__negro);
