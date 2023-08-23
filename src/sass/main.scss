@@ -68,7 +68,6 @@ Hero
 
   }
   /* background-image: url("../img/circulos-fondo.webp"), url("../img/notas-musicales.webp"),linear-gradient(90deg, $color__aniversario__rosa 0%, $color__aniversario__naranja 50%, $color__aniversario__rosa 100%); */
-  background-color: black;
   background-position: center center, center center, center center;
   background-repeat: no-repeat, no-repeat, no-repeat;
   img{
@@ -80,15 +79,17 @@ Hero
     color: $color__blanco;
   }
   &__h3{
-    @include parrafo($tipo__textos,clamp(1.2em,1.6vw,2rem), 400, $color__blanco);
+    @include parrafo($tipo__textos,clamp(1.5em,1.6vw,2rem), 400, $color__negro);
     text-align: center;
-    width: 75%;
-    @include media(576px){
-      width: 95%;
-      margin-top: 5rem;
+    width: 100%;
+    margin-top: 1rem;
+    margin-bottom:2rem;
+    p{
+      margin: 0;
     }
   }
 }
+
 
 /*
 **************************************************
@@ -164,6 +165,25 @@ Como ganar
     }
   }
 }
+
+/*
+**************************************************
+––––––––––––––––––––––––––––––––––––––––––––––––––
+donde
+––––––––––––––––––––––––––––––––––––––––––––––––––
+**************************************************
+*/
+.donde{
+  max-width: 80%;
+  margin: 3rem auto;
+  @include parrafo($tipo__textos,clamp(1.3em,1.4vw,1.6rem), 400, $color__negro);
+  text-align: center;
+  width: 100%;
+  p:first-child{
+    margin-bottom: 1rem;
+  }
+}
+
 /*
 **************************************************
 ––––––––––––––––––––––––––––––––––––––––––––––––––
@@ -172,10 +192,17 @@ Si ganas
 **************************************************
 */
 .siganas{
-  max-width: 80%;
+  width: 100%;
   margin: 2rem auto;
+  background-color: $color__gris__claro;
+  padding: 2rem 0;
+  &__wrapper{
+    max-width: 90%;
+    margin: 0 auto;
+  }
+
   &__h2{
-    @include titulo(clamp(2.5rem, 2vw, 3rem));
+    @include titulo(clamp(2rem, 2vw, 2.5rem));
     color: $color__negro;
     margin-bottom: 2rem;
   }
@@ -190,11 +217,18 @@ Si ganas
   ul{
     li{
       list-style: disc;
-      @include parrafo($tipo__titulos,clamp(1.2rem,1.4vw,1.5rem), 400, $color__negro);
+      @include parrafo($tipo__titulos,clamp(1.1rem,1.2vw,1.3rem), 400, $color__negro);
     }
     li::marker{
       color:$color__naranja;
       font-size: 1.5em;
+    }
+  }
+  &__small{
+    p{
+      font-size: 0.9em;
+      font-weight:300 ;
+      margin: 0;
     }
   }
 }

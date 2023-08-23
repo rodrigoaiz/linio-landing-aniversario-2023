@@ -443,7 +443,6 @@ Hero
   align-content: space-evenly;
   min-height: 19rem;
   /* background-image: url("../img/circulos-fondo.webp"), url("../img/notas-musicales.webp"),linear-gradient(90deg, $color__aniversario__rosa 0%, $color__aniversario__naranja 50%, $color__aniversario__rosa 100%); */
-  background-color: black;
   background-position: center center, center center, center center;
   background-repeat: no-repeat, no-repeat, no-repeat;
 }
@@ -475,17 +474,16 @@ Hero
 }
 .hero__h3 {
   font-family: "Lato", sans-serif;
-  font-size: clamp(1.2em, 1.6vw, 2rem);
+  font-size: clamp(1.5em, 1.6vw, 2rem);
   font-weight: 400;
-  color: rgb(255, 255, 255);
+  color: rgb(43, 43, 43);
   text-align: center;
-  width: 75%;
+  width: 100%;
+  margin-top: 1rem;
+  margin-bottom: 2rem;
 }
-@media screen and (max-width: 576px) {
-  .hero__h3 {
-    width: 95%;
-    margin-top: 5rem;
-  }
+.hero__h3 p {
+  margin: 0;
 }
 
 /*
@@ -592,19 +590,46 @@ Como ganar
 /*
 **************************************************
 ––––––––––––––––––––––––––––––––––––––––––––––––––
+donde
+––––––––––––––––––––––––––––––––––––––––––––––––––
+**************************************************
+*/
+.donde {
+  max-width: 80%;
+  margin: 3rem auto;
+  font-family: "Lato", sans-serif;
+  font-size: clamp(1.3em, 1.4vw, 1.6rem);
+  font-weight: 400;
+  color: rgb(43, 43, 43);
+  text-align: center;
+  width: 100%;
+}
+.donde p:first-child {
+  margin-bottom: 1rem;
+}
+
+/*
+**************************************************
+––––––––––––––––––––––––––––––––––––––––––––––––––
 Si ganas
 ––––––––––––––––––––––––––––––––––––––––––––––––––
 **************************************************
 */
 .siganas {
-  max-width: 80%;
+  width: 100%;
   margin: 2rem auto;
+  background-color: #ebf0f5;
+  padding: 2rem 0;
+}
+.siganas__wrapper {
+  max-width: 90%;
+  margin: 0 auto;
 }
 .siganas__h2 {
   font-family: "Lato", sans-serif;
   font-weight: 900;
   text-align: center;
-  font-size: clamp(2.5rem, 2vw, 3rem);
+  font-size: clamp(2rem, 2vw, 2.5rem);
   color: rgb(43, 43, 43);
   color: rgb(43, 43, 43);
   margin-bottom: 2rem;
@@ -627,13 +652,18 @@ Si ganas
 .siganas ul li {
   list-style: disc;
   font-family: "Lato", sans-serif;
-  font-size: clamp(1.2rem, 1.4vw, 1.5rem);
+  font-size: clamp(1.1rem, 1.2vw, 1.3rem);
   font-weight: 400;
   color: rgb(43, 43, 43);
 }
 .siganas ul li::marker {
   color: #ff6600;
   font-size: 1.5em;
+}
+.siganas__small p {
+  font-size: 0.9em;
+  font-weight: 300;
+  margin: 0;
 }
 
 /*
