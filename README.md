@@ -1,7 +1,11 @@
 # linio-landing-aniversario-2023
 Landing Page para Linio Aniversario
 
-# Compilar Sass
+## Build Parcel
 ```
-npm run sass-watch
+npm install --save-dev parcel
+```
+
+```
+npm run build
 ```

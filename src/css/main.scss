@@ -106,11 +106,11 @@ Como ganar
   }
   @include media(767px){
     &__slide::before{
-      content: "👉";
+      content: url(../img/arrows-left-right-solid.svg);
       position: absolute;
       top:0;
       right: 0.5rem;
-      font-size: 2rem;
+      width: 2rem;
     }
   }
   &__slide{
