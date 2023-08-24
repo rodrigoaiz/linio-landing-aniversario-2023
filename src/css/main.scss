@@ -166,7 +166,7 @@ Como ganar
     margin: 0;
   }
   @include media(991px){
-    max-width: 80%;
+    max-width: 90%;
     margin: 0 auto;
     &__slide::before{
       content: url(../img/arrows-left-right-solid.svg);
