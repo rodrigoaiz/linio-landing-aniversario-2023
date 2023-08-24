@@ -35,7 +35,7 @@ strong{
   font-weight: 700;
 }
 p{
-  line-height: clamp(1.6em, 1.7vw, 1.9rem);
+  /* line-height: clamp(1.6em, 1.7vw, 1.9rem); */
   font-family: $tipo__textos;
   font-size: clamp(1.05em, 1vw, 1em);
   margin-bottom: 1em;
@@ -81,7 +81,7 @@ Hero
      background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.05)), url("../img/fondo-hero.webp");
   }
   &__article{
-    max-width: 30%;
+    max-width: 33%;
     @include media (767px){
       min-width: 100%;
       text-align: center;
@@ -93,7 +93,9 @@ Hero
       }
     }
     p{
-      color: $color__blanco;
+      @include parrafo($tipo__textos,clamp(1em,1vw,1.2rem), 900, $color__blanco);
+      line-height: clamp(1.3em, 1.5vw, 1.8rem);
+
       @include media (767px){
         font-size: 0.8rem;
       }
@@ -123,19 +125,14 @@ Tus compras
 */
 .tuscompras{
   max-width: 100%;
-  margin: 2rem auto;
+  margin: 0.5rem auto;
   @include media (767px){
     margin: 0.5rem auto 1rem;
   }
-  @include parrafo($tipo__textos,clamp(1.2em,2vw,2em), 400, $color__negro);
+  @include parrafo($tipo__textos,clamp(1.1em,1.5vw,1.7em), 400, $color__negro);
+  line-height: clamp(1.2em, 1.5vw, 1.6rem);
   text-align: center;
   width: 100%;
-  p:first-child{
-    margin-bottom: 1rem;
-     @include media (767px){
-      margin-bottom: 0.3rem;
-     }
-  }
 }
 
 /*
@@ -146,15 +143,14 @@ Como ganar
 **************************************************
 */
 .comoganar{
+  @include gradiente (linear-gradient, $color__aniversario__rosa, $color__aniversario__naranja);
+  padding-top: 0.5rem;
   &__h2{
-    @include titulo(clamp(1.3em, 2.5vw, 3rem));
-    color: $color__negro;
-    margin-bottom: 2rem;
-    @include media (767px){
-      margin-bottom: 0.5rem;
-    }
+    @include titulo(clamp(1.5em, 2vw, 2.2rem));
+    color: $color__blanco;
+    margin: 0;
   }
-  @include media(767px){
+  @include media(991px){
     &__slide::before{
       content: url(../img/arrows-left-right-solid.svg);
       position: absolute;
@@ -166,20 +162,20 @@ Como ganar
   &__slide{
 
     padding: 2rem 0;
-    @include flex(flex, row, wrap, center, space-evenly);
-    @include gradiente (linear-gradient, $color__aniversario__rosa, $color__aniversario__naranja);
-    @include media(767px){
+    @include flex(flex, row, wrap, center, space-around);
+    @include media(991px){
       @include flex(flex, row, nowrap, left, center);
       overflow-y: scroll;
       position: relative;
-      padding: 1rem 0;
+      padding: 0.5rem 0;
     }
     &__article{
       width: 20%;
 
       text-align: center;
-       @include parrafo($tipo__titulos,clamp(1.3rem,1vw,2rem), 400, $color__blanco);
-       @include media(767px){
+       @include parrafo($tipo__titulos,clamp(1.1rem,1.2vw,1.3rem), 400, $color__blanco);
+       line-height: clamp(1.3rem,1.5vw,1.7rem);
+       @include media(991px){
          min-width: 100%;
        }
     }
@@ -188,44 +184,49 @@ Como ganar
     }
      &__icon{
       background-color: $color__blanco;
-      height: 10rem;
-      width: 10rem;
+      height:9em;
+      width: 9em;
       margin: 0 auto 1.5rem;
-      @include media (767px){
-        height: 6rem;
-        width: 6rem;
+      @include media (991px){
+        height: 7rem;
+        width: 7rem;
         margin: 0 auto 0.5rem;
       }
       border-radius: 20rem;
       color: $color__negro;
       @include flex(flex, row, wrap, center, center);
-      svg{
-        height: 3em;
-        @include media (767px){
-          height: 2em;
+      .mc{
+        height: 7rem;
+        @include media (991px){
+          height: 5.5rem;
         }
+      }
+      img{
+          height: 5rem;
+
+          @include media (991px){
+            height: 3rem;
+           }
+
       }
     }
     &__foot{
       margin-top: 2rem;
-
       @include parrafo($tipo__titulos,clamp(1.5rem,1vw,2rem), 400, $color__blanco);
       text-align: center;
-      @include media(767px){
-         display: none;
-       }
+      @include media (991px){
+        min-width: 100%;
+        flex-grow: 3;
+      }
     }
   }
   &__foot{
-    margin-top: 2rem;
-    @include parrafo($tipo__titulos,clamp(1.5rem,1vw,2rem), 400, $color__aniversario__rosa);
+    @include parrafo($tipo__titulos,clamp(1.2rem,1.5vw,1.7rem), 400, $color__blanco);
     text-align: center;
-    @include media(767px){
-      margin-top: 0.5rem;
+    @include media(991px){
+      margin-top: 0;
     }
-    @include mediadelante(768px){
-      display: none;
-    }
+
   }
 }
 
@@ -242,7 +243,8 @@ donde
   @include media(767px){
      margin: 0.9rem auto;
   }
-  @include parrafo($tipo__textos,clamp(1.2em,1.4vw,1.6rem), 400, $color__negro);
+  @include parrafo($tipo__textos,clamp(1.1em,1.5vw,1.7em), 400, $color__negro);
+  line-height: clamp(1.2em, 1.5vw, 1.6rem);
   text-align: center;
   width: 100%;
   p:first-child{
@@ -261,16 +263,17 @@ Si ganas
   width: 100%;
  /* margin: 2rem auto;*/
   background-color: $color__gris__claro;
-  padding: 2rem 0;
+  padding: 1rem 0;
   &__wrapper{
     max-width: 90%;
     margin: 0 auto;
   }
 
   &__h2{
-    @include titulo(clamp(1.6rem, 2vw, 2.5rem));
-    color: $color__negro;
-    margin-bottom: 2rem;
+    @include parrafo($tipo__textos,clamp(1.1em,1.5vw,1.7em), 900, $color__negro);
+  line-height: clamp(1.2em, 1.5vw, 1.6rem);
+  text-align: center;
+    margin-bottom: 1rem;
     @include media(767px){
       margin-bottom: 0.5rem;
     }
@@ -278,6 +281,17 @@ Si ganas
   p{
     @include parrafo($tipo__titulos,clamp(1.5rem,1vw,2rem), 900, $color__negro);
   }
+  button{
+       @include gradiente (linear-gradient, $color__aniversario__rosa, $color__aniversario__naranja);
+       margin: 1rem auto 0;
+       color: $color__blanco;
+       text-transform: uppercase;
+       padding: 0.5rem 0.5rem;
+
+       font-family: $tipo__titulos;
+       border-radius: 5rem;
+
+    }
   &__lead{
     text-align: center;
     @include titulo(clamp(1.5rem, 1.7vw, 1.7rem));
@@ -316,7 +330,7 @@ FAQ
   }
   h2{
     a{
-        @include parrafo($tipo__titulos,clamp(1.2rem,1.5vw,1.6rem), 900, $color__negro);
+        @include parrafo($tipo__titulos,clamp(1.2rem,1.4vw,1.4rem), 900, $color__negro);
         padding-left: 2rem;
       }
   }
@@ -331,6 +345,11 @@ FAQ
        border-radius: 5rem;
 
     }
+    ol{
+      li{
+        list-style: decimal;
+      }
+    }
 }
 
 .accordion-button{
@@ -339,4 +358,24 @@ FAQ
 }
 .accordion-item{
   margin-bottom: 1rem;
+}
+
+.modal{
+  label{
+    font-family: $tipo__textos;
+  }
+  .modal-body{
+    button{
+         @include gradiente (linear-gradient, $color__aniversario__rosa, $color__aniversario__naranja);
+         margin: 1rem auto 0;
+         color: $color__blanco;
+         text-transform: uppercase;
+         padding: 0.5rem 0.5rem;
+
+         font-family: $tipo__titulos;
+         border-radius: 5rem;
+
+      }
+  }
+
 }
