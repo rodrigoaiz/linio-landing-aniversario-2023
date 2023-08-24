@@ -172,12 +172,13 @@ Como ganar
       @include flex(flex, row, nowrap, left, center);
       overflow-y: scroll;
       position: relative;
+      padding: 1rem 0;
     }
     &__article{
       width: 20%;
 
       text-align: center;
-       @include parrafo($tipo__titulos,clamp(1.5rem,1vw,2rem), 400, $color__blanco);
+       @include parrafo($tipo__titulos,clamp(1.3rem,1vw,2rem), 400, $color__blanco);
        @include media(767px){
          min-width: 100%;
        }
@@ -189,12 +190,20 @@ Como ganar
       background-color: $color__blanco;
       height: 10rem;
       width: 10rem;
-      margin: 0 auto;
+      margin: 0 auto 1.5rem;
+      @include media (767px){
+        height: 6rem;
+        width: 6rem;
+        margin: 0 auto 0.5rem;
+      }
       border-radius: 20rem;
       color: $color__negro;
       @include flex(flex, row, wrap, center, center);
       svg{
         height: 3em;
+        @include media (767px){
+          height: 2em;
+        }
       }
     }
     &__foot{
