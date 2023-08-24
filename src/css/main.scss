@@ -55,7 +55,22 @@ Hero
 ––––––––––––––––––––––––––––––––––––––––––––––––––
 **************************************************
 */
-
+ .hero-img{
+  width: 100%;
+  &__img{
+    max-width: 100%;
+    @include media (767px){
+      display: none;
+    }
+  }
+  &__img-movil{
+    max-width: 100%;
+    @include mediadelante(768){
+      display: none;
+    }
+  }
+}
+/*
 .hero{
   @include flex(flex, row, nowrap, space-between, end);
   padding: 1rem;
@@ -114,7 +129,7 @@ Hero
 
 
 
-}
+} */
 
 /*
 **************************************************
@@ -151,6 +166,8 @@ Como ganar
     margin: 0;
   }
   @include media(991px){
+    max-width: 80%;
+    margin: 0 auto;
     &__slide::before{
       content: url(../img/arrows-left-right-solid.svg);
       position: absolute;
@@ -221,10 +238,11 @@ Como ganar
     }
   }
   &__foot{
-    @include parrafo($tipo__titulos,clamp(1.2rem,1.5vw,1.7rem), 400, $color__blanco);
+    @include parrafo($tipo__titulos,clamp(1rem,1.5vw,1.7rem), 400, $color__blanco);
     text-align: center;
     @include media(991px){
       margin-top: 0;
+      padding-bottom: 0.5rem;
     }
 
   }
@@ -240,7 +258,8 @@ donde
 .donde{
   max-width: 80%;
   margin: 1.5rem auto;
-  @include media(767px){
+  @include media(991px){
+    min-width: 100%;
      margin: 0.9rem auto;
   }
   @include parrafo($tipo__textos,clamp(1.1em,1.5vw,1.7em), 400, $color__negro);
