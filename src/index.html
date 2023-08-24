@@ -109,14 +109,14 @@
                 <input class="d-inline-block" type="checkbox" id="acceptTerms" name="acceptTerms" required>
                 Acepto y he leído los términos y condiciones al final de esta página
               </label>
-              <button type="submit">Acepto y quiero loguearme en Linio</button>
+              <button type="submit">Acepto y quiero registrarme en Linio</button>
             </form>
           </div>
           <script>
             document.getElementById("termsForm").addEventListener("submit", function (event) {
                 if (!document.getElementById("acceptTerms").checked) {
                   alert("Debes aceptar los términos y condiciones para continuar.");
-                  event.preventDefault(); // Evita el envío del formulario si no se aceptan los términos.
+                  event.preventDefault();
                 }
               });
           </script>
