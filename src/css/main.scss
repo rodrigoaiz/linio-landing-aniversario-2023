@@ -364,13 +364,24 @@ FAQ
        border-radius: 5rem;
 
     }
-    ol{
-      li{
-        list-style: decimal;
-      }
-    }
 }
-
+.ol{
+  &__numeros{
+    li{
+      list-style: decimal;
+    }
+  }
+  &__letras{
+    li{
+      list-style:lower-latin;
+    }
+  }
+  &__bullet{
+    li{
+      list-style: disc;
+    }
+  }
+}
 .accordion-button{
   background-color:$color__gris__claro !important;
   text-decoration: none !important;
