@@ -86,19 +86,28 @@
     </section>
     <!-- Modal -->
     <div class="modal fade" id="acepto" tabindex="-1" aria-labelledby="aceptoLabel" aria-hidden="true">
-      <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-dialog modal-dialog-centered modal-xl">
         <div class="modal-content">
           <div class="modal-header">
             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
           </div>
-          <div class="modal-body">
-            <form id="termsForm">
-              <label for="acceptTerms">
-                <input class="d-inline-block" type="checkbox" id="acceptTerms" name="acceptTerms" required>
-                Acepto y he leído los términos y condiciones al final de esta página
-              </label>
-              <button type="submit">Acepto y quiero registrarme en Linio</button>
-            </form>
+          <div class="modal-body justify-content-between">
+            <div class="row">
+              <div class="col-lg-5 mx-auto text-center">
+                <p>¿Aun no tienes cuenta?</p>
+                <button onclick="window.location.href='https://www.linio.com.mx/account/login'" type="button">Crear cuenta en
+                  Linio</button>
+              </div>
+              <div class="col-lg-5 mx-auto text-center">
+                <p>Si ya estás registrado debes aceptar términos y condiciones para participar.</p>
+                <form id="termsForm">
+                  <label for="acceptTerms">
+                    <p><input class="d-inline-block" type="checkbox" id="acceptTerms" name="acceptTerms" required>Acepto los términos y condiciones al final de esta página.</p>
+                  </label>
+                  <button type="submit">Acepto</button>
+                </form>
+              </div>
+            </div>
           </div>
           <script>
             document.getElementById("termsForm").addEventListener("submit", function (event) {
@@ -238,7 +247,7 @@
                 claridad lo que quieres. Esta la podrás encontrar del lado inferior izquierdo de tu pantalla.</p>
               <p>Además, si buscas productos internacionales, podrás activar la casilla correspondiente en la barra de filtros. </p>
               <p>Sí aún tienes dudas, ¡no te preocupes! Comunícate con nosotros a este número: 55-85-25-13-00 o haz clic aquí: </p>
-              <button>Necesito ayuda</button>
+              <button onclick="window.location.href='https://www.linio.com.mx/sp/preguntas-frecuentes/como-comprar#s1'">Necesito ayuda</button>
             </div>
           </div>
         </div>
