@@ -5,8 +5,8 @@ Imports
 ––––––––––––––––––––––––––––––––––––––––––––––––––
 **************************************************
 */
-@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,300;0,400;0,900;1,300;1,400;1,900&display=swap');
-@import"linio.css";
+/* @import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,300;0,400;0,900;1,300;1,400;1,900&display=swap'); */
+/* @import"linio.css"; */
 @import"colors.scss";
 @import"mixins.scss";
 /*
@@ -17,8 +17,8 @@ Fuentes
 **************************************************
 */
 $espacio__secciones:2rem;
-$tipo__titulos: 'Lato', sans-serif;
-$tipo__textos: 'Lato', sans-serif;
+$tipo__titulos: Lato, sans-serif;
+$tipo__textos: Lato, sans-serif;
 body{
   font-family: $tipo__textos;
   font-size: clamp(1.5rem, 1vw, 1em);
