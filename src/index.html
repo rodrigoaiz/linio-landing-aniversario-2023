@@ -4,8 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="./css/main.scss">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css
-">
+  <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css"> -->
   <title>Linio Aniversario</title>
 </head>
 <body>
@@ -81,28 +80,31 @@
           <p>**Los vuelos nacionales no están cubiertos.</p>
           <p><strong>*Cortesía de Mastercard</strong></p>
         </div>
-        <button type="button" data-bs-toggle="modal" data-bs-target="#acepto">¡Quiero participar!</button>
+        <button type="button" data-toggle="modal" data-target="#acepto">¡Quiero participar!</button>
       </div>
     </section>
     <!-- Modal -->
     <div class="modal fade" id="acepto" tabindex="-1" aria-labelledby="aceptoLabel" aria-hidden="true">
       <div class="modal-dialog modal-dialog-centered modal-xl">
         <div class="modal-content">
-          <div class="modal-header">
-            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          <div class="modal-header ">
+            <h5 class="modal-title " id="staticBackdropLabel">¡Quiero participar!</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
           </div>
-          <div class="modal-body justify-content-between">
-            <div class="row">
+          <div class="modal-body">
+            <div class="row align-items-center justify-content-between">
               <div class="col-lg-5 mx-auto text-center">
                 <p>¿Aun no tienes cuenta?</p>
                 <button onclick="window.location.href='https://www.linio.com.mx/account/login'" type="button">Crear cuenta en
                   Linio</button>
               </div>
               <div class="col-lg-5 mx-auto text-center">
-                <p>Si ya estás registrado debes aceptar términos y condiciones para participar.</p>
+                <p class="text-left font-weight-bold">Si ya estás registrado debes aceptar términos y condiciones para participar.</p>
                 <form id="termsForm">
                   <label for="acceptTerms">
-                    <p><input class="d-inline-block" type="checkbox" id="acceptTerms" name="acceptTerms" required>Acepto los términos y condiciones al final de esta página.</p>
+                    <p><input class="d-inline-block" type="checkbox" id="acceptTerms" name="acceptTerms" required> Acepto los términos y condiciones al final de esta página.</p>
                   </label>
                   <button type="submit">Acepto</button>
                 </form>
@@ -121,22 +123,33 @@
         </div>
       </div>
     </div>
-    <section class="donde">
-      <p><strong>El ganador será anunciado en esta página y en nuestras redes sociales el 28 de septiembre</strong></p>
+    <section class="participando" id="participando">
+      <h3><svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-check-circle"
+        viewBox="0 0 16 16">
+        <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z" />
+        <path
+        d="M10.97 4.97a.235.235 0 0 0-.02.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-1.071-1.05z" />
+      </svg> Ya estás participando</h3>
+      <button onclick="window.location.href='https://www.linio.com.mx/account/login'" type="button">Empieza a comprar</button>
+    </section>
+    <section class="ganador">
+      <p class="mt-3"><strong>El ganador será anunciado en esta página y en nuestras redes sociales el 28 de septiembre</strong></p>
     </section>
     <section class="faq mb-5">
-      <div class="accordion accordion-flush mb-5" id="accordionFlushExample">
-        <div class="accordion-item hc-question">
-          <h2 class="accordion-header">
-            <a class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-              data-bs-target="#colapse1" aria-expanded="false" aria-controls="colapse1">
-              Términos y condiciones
-            </a>
-          </h2>
-          <div id="colapse1" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
-            <div class="accordion-body">
-              <h3>Términos y condiciones </h3>
-              <p><em>“Tus compras durante nuestro aniversario te llevan a Los Latin GRAMMYs™”</em></p>
+      <div class="accordion" id="accordionExample">
+        <div class="card">
+          <div class="card-header" id="headingOne">
+            <h2 class="mb-0">
+              <a class="text-left" type="button" data-toggle="collapse" data-target="#collapseOne"
+                aria-expanded="false" aria-controls="collapseOne">
+                Términos y condiciones
+              </a>
+            </h2>
+          </div>
+
+          <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordionExample">
+            <div class="card-body">
+              <p class="lead font-weight-bold"><em>“Tus compras durante nuestro aniversario te llevan a Los Latin GRAMMYs™”</em></p>
 
               <p><strong>I.ORGANIZADOR</strong></p>
               <ol class="ol__letras">
@@ -229,15 +242,17 @@
             </div>
           </div>
         </div>
-        <div class="accordion-item hc-question">
-          <h2 class="accordion-header">
-            <a class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-              data-bs-target="#colapse2" aria-expanded="false" aria-controls="colapse2">
-              ¿Cómo comprar en Linio?
-            </a>
-          </h2>
-          <div id="colapse2" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
-            <div class="accordion-body">
+        <div class="card">
+          <div class="card-header" id="headingTwo">
+            <h2 class="mb-0">
+              <a class="text-left collapsed" type="button" data-toggle="collapse"
+                data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                ¿Cómo comprar en Linio?
+              </a>
+            </h2>
+          </div>
+          <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
+            <div class="card-body">
               <p><strong>Comprar en Linio es muy rápido y fácil:</strong></p>
               <p>En la barra superior de búsqueda podrás escribir el nombre del producto, la marca o la categoría y nuestro sistema te
                 arrojará sugerencias para ayudarte a encontrar tu producto. </p>
@@ -256,6 +271,6 @@
     <!-- Fin contenido landing -->
   </div>
 </body>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js
-"></script>
+<!-- <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct" crossorigin="anonymous"></script> -->
 </html>
