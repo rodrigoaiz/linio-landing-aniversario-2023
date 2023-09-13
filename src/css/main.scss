@@ -6,7 +6,7 @@ Imports
 **************************************************
 */
 @import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,300;0,400;0,900;1,300;1,400;1,900&display=swap');
-@import"reset.scss";
+@import"linio.css";
 @import"colors.scss";
 @import"mixins.scss";
 /*
@@ -30,11 +30,14 @@ a{
   text-decoration: underline;
   transition: all 0.5s ease;
 }
+button{
+  border: none;
+}
 strong{
   font-weight: 700;
 }
 p{
-  /* line-height: clamp(1.6em, 1.7vw, 1.9rem); */
+  /* line-height: clamp(1.5em, 1.6vw, 1.7rem); */
   font-family: $tipo__textos;
   font-size: clamp(1.05em, 1vw, 1em);
   margin-bottom: 1em;
@@ -69,66 +72,6 @@ Hero
     }
   }
 }
-/*
-.hero{
-  @include flex(flex, row, nowrap, space-between, end);
-  padding: 1rem;
-  background-image: url("../img/fondo-hero.webp");
-  background-position: center center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  &__celebremos-left{
-    @include media (767px){
-      display: none;
-    }
-  }
-  &__celebremos-center{
-    display: none;
-    min-width: 80%;
-    @include media (767px){
-      display: inline-flex;
-    }
-  }
-  @include media (767px){
-
-    @include flex(flex, row, wrap, center, center);
-     background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.05)), url("../img/fondo-hero.webp");
-  }
-  &__article{
-    max-width: 33%;
-    @include media (767px){
-      min-width: 100%;
-      text-align: center;
-    }
-    img{
-      max-width:100% ;
-      @include media (767px){
-        max-width: 50%;
-      }
-    }
-    p{
-      @include parrafo($tipo__textos,clamp(1em,1vw,1.2rem), 900, $color__blanco);
-      line-height: clamp(1.3em, 1.5vw, 1.8rem);
-
-      @include media (767px){
-        font-size: 0.8rem;
-      }
-    }
-  }
-
-  &__article:last-child{
-    max-width: 15%;
-    @include media (767px){
-      margin-top: 2rem;
-      img{
-        max-width: 30%;
-      }
-    }
-  }
-
-
-
-} */
 
 /*
 **************************************************
@@ -138,14 +81,18 @@ Tus compras
 **************************************************
 */
 .tuscompras{
+
   max-width: 100%;
   margin: 0.5rem auto;
   @include media (767px){
     margin: 0.5rem auto 1rem;
   }
-  @include parrafo($tipo__textos,clamp(1.1em,1.5vw,1.7em), 400, $color__negro);
-  line-height: clamp(1.2em, 1.5vw, 1.6rem);
-  text-align: center;
+  p{
+
+    @include parrafo($tipo__textos,clamp(1.2rem,1.8vw,1.9rem), 400, $color__negro);
+    line-height: clamp(1.2em, 1.5vw, 1.6rem);
+    text-align: center;
+  }
   width: 100%;
 }
 
@@ -160,9 +107,10 @@ Como ganar
   @include gradiente (linear-gradient, $color__aniversario__rosa, $color__aniversario__naranja);
   padding-top: 0.5rem;
   &__h2{
-    @include titulo(clamp(1.5em, 2vw, 2.2rem));
+    @include titulo(clamp(1.2em, 3vw, 2.2rem));
     color: $color__blanco;
     margin: 0;
+    line-height: clamp(1.1em, 1.2vw, 1.6rem);
   }
   @include media(991px){
     max-width: 90%;
@@ -239,6 +187,7 @@ Como ganar
   &__foot{
     @include parrafo($tipo__titulos,clamp(1rem,1.5vw,1.7rem), 400, $color__blanco);
     text-align: center;
+    padding-bottom: 1rem;
     @include media(991px){
       margin-top: 0;
       padding-bottom: 0.5rem;
@@ -261,9 +210,11 @@ donde
     min-width: 100%;
      margin: 0.9rem auto;
   }
-  @include parrafo($tipo__textos,clamp(1.1em,1.5vw,1.7em), 400, $color__negro);
-  line-height: clamp(1.2em, 1.5vw, 1.6rem);
-  text-align: center;
+  p{
+    @include parrafo($tipo__textos,clamp(1.2rem,1.8vw,1.9rem), 400, $color__negro);
+    line-height: clamp(1.2em, 1.5vw, 1.6rem);
+    text-align: center;
+  }
   width: 100%;
   p:first-child{
     margin-bottom: 1rem;
@@ -283,10 +234,62 @@ ganador
     min-width: 100%;
      margin: 0.9rem auto;
   }
-  @include parrafo($tipo__textos,clamp(1.1em,1.5vw,1.7em), 400, $color__negro);
-  line-height: clamp(1.2em, 1.5vw, 1.6rem);
-  text-align: center;
-  width: 100%;
+  p{
+    @include parrafo($tipo__textos,clamp(1.1em,1.5vw,1.7em), 400, $color__negro);
+    line-height: clamp(1.2em, 1.5vw, 1.6rem);
+    text-align: center;
+    width: 100%;
+  }
+  p:first-child{
+    margin-bottom: 1rem;
+  }
+}
+/*
+**************************************************
+––––––––––––––––––––––––––––––––––––––––––––––––––
+participar
+––––––––––––––––––––––––––––––––––––––––––––––––––
+**************************************************
+*/
+.participar{
+  max-width: 80%;
+  margin: 1.5rem auto;
+  @include media(991px){
+    min-width: 100%;
+     margin: 0.9rem auto;
+  }
+  svg {
+    max-width: 2rem;
+    display: inline-block
+  }
+  button{
+    @include gradiente (linear-gradient, $color__aniversario__rosa, $color__aniversario__naranja);
+    margin:0 auto;
+    color: $color__blanco;
+    text-transform: uppercase;
+    padding: 0.5rem 0.5rem;
+    font-size: 1rem;
+    font-family: $tipo__titulos;
+    border-radius: 5rem;
+    display: block;
+
+    }
+  h3{
+    @include parrafo($tipo__textos,clamp(1.1em,1.5vw,1.7em), 900, $color__negro);
+    line-height: clamp(1.2em, 1.5vw, 1.6rem);
+    text-align: center;
+    width: 100%;
+  }
+  form{
+    text-align: center;
+    margin:0
+  }
+  p{
+    @include parrafo($tipo__textos,clamp(1rem,1.1vw,1.2rem), 400, $color__negro);
+    line-height: clamp(1.1em, 1.3vw, 1.4rem);
+    text-align: center;
+    width: 100%;
+  }
   p:first-child{
     margin-bottom: 1rem;
   }
@@ -311,22 +314,23 @@ participando
   }
   button{
     @include gradiente (linear-gradient, $color__aniversario__rosa, $color__aniversario__naranja);
-    margin: 1rem auto 0;
+    margin: 0 auto;
     color: $color__blanco;
     text-transform: uppercase;
     padding: 0.5rem 0.5rem;
     font-size: 1rem;
     font-family: $tipo__titulos;
     border-radius: 5rem;
+    display: block
 
     }
-  @include parrafo($tipo__textos,clamp(1.1em,1.5vw,1.7em), 900, $color__negro);
-  line-height: clamp(1.2em, 1.5vw, 1.6rem);
-  text-align: center;
+    h3{
+      @include parrafo($tipo__textos,clamp(1.1em,1.5vw,1.7em), 900, $color__negro);
+      line-height: clamp(1.2em, 1.5vw, 1.6rem);
+      text-align: center;
+      margin-bottom: 1rem;
+    }
   width: 100%;
-  p:first-child{
-    margin-bottom: 1rem;
-  }
 }
 
 /*
@@ -375,6 +379,7 @@ Si ganas
     color: $color__negro;
   }
   ul{
+    margin: 0;
     li{
       list-style: disc;
       @include parrafo($tipo__titulos,clamp(1.1rem,1.2vw,1.3rem), 400, $color__negro);
@@ -386,7 +391,7 @@ Si ganas
   }
   &__small{
     p{
-      font-size: 0.9em;
+      font-size: 0.7em;
       font-weight:300 ;
       margin: 0;
     }
@@ -401,69 +406,65 @@ FAQ
 */
 
 .faq{
-
+  p{
+    @include parrafo($tipo__titulos,clamp(1rem,1.2vw,1.2rem), 400, $color__negro);
+  }
   article{
     margin-bottom: 1rem;
+  }
+  &__header-collapse{
+    background-color: $color__gris__claro;;
+    padding: 0.5em;
+  }
+  &__collapse-body{
+    padding:1rem 2rem;
   }
   h2{
     a{
         @include parrafo($tipo__titulos,clamp(1.2rem,1.4vw,1.4rem), 900, $color__negro);
-        padding-left: 2rem;
+        padding-left: 1rem;
+        text-decoration: none;
       }
   }
   button{
-       @include gradiente (linear-gradient, $color__naranja, $color__naranja__alt);
-       margin: 0 auto;
-       color: $color__blanco;
-       text-transform: uppercase;
-       padding: 0.5rem 1rem;
-
-       font-family: $tipo__titulos;
-       border-radius: 5rem;
-
-    }
+    @include parrafo($tipo__titulos,clamp(1.2rem,1.4vw,1.4rem), 400, $color__negro);
+    @include gradiente (linear-gradient, $color__naranja, $color__naranja__alt);
+    margin: 0 auto;
+    color: $color__blanco;
+    text-transform: uppercase;
+    padding: 0.5rem 0.5rem;
+    font-size: 1rem;
+    font-family: $tipo__titulos;
+    border-radius: 5rem;
+    display: block;
+    border-radius: 5rem;
+  }
+}
+ol li:before {
+  display: block;
 }
 .ol{
+  margin: 0;
+  color:$color__negro;
   &__numeros{
     li{
+      color:$color__negro;
       list-style: decimal;
+      margin-bottom: 0;
     }
   }
   &__letras{
     li{
+      color:$color__negro;
       list-style:lower-latin;
+      margin-bottom: 0;
     }
   }
   &__bullet{
     li{
+      color:$color__negro;
       list-style: disc;
+      margin-bottom: 0;
     }
   }
-}
-.accordion-button{
-  background-color:$color__gris__claro !important;
-  text-decoration: none !important;
-}
-.accordion-item{
-  margin-bottom: 1rem;
-}
-
-.modal{
-  label{
-    font-family: $tipo__textos;
-  }
-  .modal-body{
-    button{
-         @include gradiente (linear-gradient, $color__aniversario__rosa, $color__aniversario__naranja);
-         margin: 1rem auto 0;
-         color: $color__blanco;
-         text-transform: uppercase;
-         padding: 0.5rem 0.5rem;
-
-         font-family: $tipo__titulos;
-         border-radius: 5rem;
-
-      }
-  }
-
 }

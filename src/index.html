@@ -4,7 +4,6 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="./css/main.scss">
-  <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css"> -->
   <title>Linio Aniversario</title>
 </head>
 <body>
@@ -80,49 +79,26 @@
           <p>**Los vuelos nacionales no están cubiertos.</p>
           <p><strong>*Cortesía de Mastercard</strong></p>
         </div>
-        <button type="button" data-toggle="modal" data-target="#acepto">¡Quiero participar!</button>
       </div>
     </section>
-    <!-- Modal -->
-    <div class="modal fade" id="acepto" tabindex="-1" aria-labelledby="aceptoLabel" aria-hidden="true">
-      <div class="modal-dialog modal-dialog-centered modal-xl">
-        <div class="modal-content">
-          <div class="modal-header ">
-            <h5 class="modal-title " id="staticBackdropLabel">¡Quiero participar!</h5>
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-              <span aria-hidden="true">&times;</span>
-            </button>
-          </div>
-          <div class="modal-body">
-            <div class="row align-items-center justify-content-between">
-              <div class="col-lg-5 mx-auto text-center">
-                <p>¿Aun no tienes cuenta?</p>
-                <button onclick="window.location.href='https://www.linio.com.mx/account/login'" type="button">Crear cuenta en
-                  Linio</button>
-              </div>
-              <div class="col-lg-5 mx-auto text-center">
-                <p class="text-left font-weight-bold">Si ya estás registrado debes aceptar términos y condiciones para participar.</p>
-                <form id="termsForm">
-                  <label for="acceptTerms">
-                    <p><input class="d-inline-block" type="checkbox" id="acceptTerms" name="acceptTerms" required> Acepto los términos y condiciones al final de esta página.</p>
-                  </label>
-                  <button type="submit">Acepto</button>
-                </form>
-              </div>
-            </div>
-          </div>
-          <script>
-            document.getElementById("termsForm").addEventListener("submit", function (event) {
-                if (!document.getElementById("acceptTerms").checked) {
-                  alert("Debes aceptar los términos y condiciones para continuar.");
-                  event.preventDefault();
-                }
-              });
-          </script>
-
-        </div>
-      </div>
-    </div>
+    <section class="participar" id="participar">
+      <h3 class="font-weight-bold">Debes aceptar términos y condiciones para participar.</h3>
+      <form id="termsForm">
+        <label for="acceptTerms">
+          <p><input class="d-inline-block" type="checkbox" id="acceptTerms" name="acceptTerms" required> Acepto los términos y
+            condiciones al final de esta página.</p>
+        </label>
+        <button type="submit">Acepto</button>
+      </form>
+    </section>
+    <script>
+      document.getElementById("termsForm").addEventListener("submit", function (event) {
+        if (!document.getElementById("acceptTerms").checked) {
+          alert("Debes aceptar los términos y condiciones para continuar.");
+          event.preventDefault();
+        }
+      });
+    </script>
     <section class="participando" id="participando">
       <h3><svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-check-circle"
         viewBox="0 0 16 16">
@@ -130,129 +106,123 @@
         <path
         d="M10.97 4.97a.235.235 0 0 0-.02.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-1.071-1.05z" />
       </svg> Ya estás participando</h3>
-      <button onclick="window.location.href='https://www.linio.com.mx/account/login'" type="button">Empieza a comprar</button>
+      <button onclick="window.location.href='https://www.linio.com.mx/'" type="button">Empieza a comprar</button>
     </section>
     <section class="ganador">
       <p class="mt-3"><strong>El ganador será anunciado en esta página y en nuestras redes sociales el 28 de septiembre</strong></p>
     </section>
     <section class="faq mb-5">
-      <div class="accordion" id="accordionExample">
-        <div class="card">
-          <div class="card-header" id="headingOne">
-            <h2 class="mb-0">
-              <a class="text-left" type="button" data-toggle="collapse" data-target="#collapseOne"
-                aria-expanded="false" aria-controls="collapseOne">
-                Términos y condiciones
-              </a>
-            </h2>
-          </div>
+      <div class="faq__accordion">
+        <div class="faq__header-collapse">
+          <h2>
+            <a class="text-left" data-target="#collapse-1">
+              Términos y condiciones
+            </a>
+          </h2>
+        </div>
+        <div id="collapse-1">
+          <div class="faq__collapse-body">
+            <p class="lead font-weight-bold"><em>“Tus compras durante nuestro aniversario te llevan a Los Latin GRAMMYs™”</em></p>
 
-          <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordionExample">
-            <div class="card-body">
-              <p class="lead font-weight-bold"><em>“Tus compras durante nuestro aniversario te llevan a Los Latin GRAMMYs™”</em></p>
+            <p><strong>I.ORGANIZADOR</strong></p>
+            <ol class="ol__letras">
+              <li>Bazaya México, S. de R.L de C.V. (en lo sucesivo “LINIO MX”)</li>
+              <li>Dirección: Av. Paseo de la Reforma No. 296, interior 30, Col. Juárez, Alcaldía Cuauhtémoc, Ciudad de México, C.P. 06600.</li>
+              <li>Teléfonos: 3603-9700</li>
+              <li>Patrocinador de Premios: MASTERCARD INTERNATIONAL, INCORPORATED (en lo sucesivo “MasterCard”)</li>
+            </ol>
 
-              <p><strong>I.ORGANIZADOR</strong></p>
-              <ol class="ol__letras">
-                <li>Bazaya México, S. de R.L de C.V. (en lo sucesivo “LINIO MX”)</li>
-                <li>Dirección: Av. Paseo de la Reforma No. 296, interior 30, Col. Juárez, Alcaldía Cuauhtémoc, Ciudad de México, C.P. 06600.</li>
-                <li>Teléfonos: 3603-9700</li>
-                <li>Patrocinador de Premios: MASTERCARD INTERNATIONAL, INCORPORATED (en lo sucesivo “MasterCard”)</li>
-              </ol>
+            <p><strong>II.DATOS DE LA DINÁMICA</strong></p>
+            <ol class="ol__letras">
+              <li>
+                <p class="text-decoration-underline">Nombre de la Dinámica: </p>
+                <p>“Tus compras durante nuestro aniversario te llevan a Los Latin GRAMMYs™”</p>
+              </li>
+              <li>
+                <p class="text-decoration-underline">Premio:</p>
+                <p>1 (un) pase doble para asistir al show de Latin GRAMMYs™ que se llevará a cabo en Sevilla, España el día 16 de noviembre de 2023. Además del pase doble, se otorgará un viaje de 4 (cuatro) noches y 5 (cinco) días y hospedaje a Sevilla para 2 (dos) personas.  El viaje incluirá lo siguiente:</p>
+                <ul class="ol__bullet">
+                  <li>Hospedaje en un hotel, durante 4 (cuatro) noches y 5 (cinco) días. El hotel otorgará desayunos gratis, los 5 (cinco) días de hospedaje.</li>
+                  <li>Viaje Redondo que saldrá de Ciudad de México a Sevilla y de regreso saldrá de Sevilla a Ciudad de México.</li>
+                  <li>Transporte aeropuerto - hotel y hotel - aeropuerto.</li>
+                  <li>Transporte relacionado a los lugares, donde se realizarán los eventos.</li>
+                </ul>
+              </li>
+              <li>
+                <p class="text-decoration-underline">Condición de participación: </p>
+                <p>Los participantes durante la vigencia de la dinámica deberán adquirir productos dentro del Sitio Web de LINIO MX establecido en el inciso b) del numeral tercero de los presentes Términos y Condiciones, con un monto mínimo de $1,000.00 (mil pesos 00/100 M.N.) utilizando como forma de pago tarjetas de MasterCard. </p>
+              </li>
+            </ol>
+            <p><strong>III.BASES DE LA DINÁMICA.</strong></p>
+            <ol class="ol__letras">
+              <li>
+                <p class="text-decoration-underline">Vigencia:  </p>
+                <p>Del 18 al 24 de septiembre de 2023.</p>
+              </li>
+              <li>
+                <p class="text-decoration-underline">Lugar de participación para hacer las compras (en lo sucesivo el “Sito Web de LINIO MX”):</p>
+                <p>https://www.linio.com.mx/</p>
+              </li>
+            </ol>
 
-              <p><strong>II.DATOS DE LA DINÁMICA</strong></p>
-              <ol class="ol__letras">
-                <li>
-                  <p class="text-decoration-underline">Nombre de la Dinámica: </p>
-                  <p>“Tus compras durante nuestro aniversario te llevan a Los Latin GRAMMYs™”</p>
-                </li>
-                <li>
-                  <p class="text-decoration-underline">Premio:</p>
-                  <p>1 (un) pase doble para asistir al show de Latin GRAMMYs™ que se llevará a cabo en Sevilla, España el día 16 de noviembre de 2023. Además del pase doble, se otorgará un viaje de 4 (cuatro) noches y 5 (cinco) días y hospedaje a Sevilla para 2 (dos) personas.  El viaje incluirá lo siguiente:</p>
-                  <ul class="ol__bullet">
-                    <li>Hospedaje en un hotel, durante 4 (cuatro) noches y 5 (cinco) días. El hotel otorgará desayunos gratis, los 5 (cinco) días de hospedaje.</li>
-                    <li>Viaje Redondo que saldrá de Ciudad de México a Sevilla y de regreso saldrá de Sevilla a Ciudad de México.</li>
-                    <li>Transporte aeropuerto - hotel y hotel - aeropuerto.</li>
-                    <li>Transporte relacionado a los lugares, donde se realizarán los eventos.</li>
-                  </ul>
-                </li>
-                <li>
-                  <p class="text-decoration-underline">Condición de participación: </p>
-                  <p>Los participantes durante la vigencia de la dinámica deberán adquirir productos dentro del Sitio Web de LINIO MX establecido en el inciso b) del numeral tercero de los presentes Términos y Condiciones, con un monto mínimo de $1,000.00 (mil pesos 00/100 M.N.) utilizando como forma de pago tarjetas de MasterCard. </p>
-                </li>
-              </ol>
-              <p><strong>III.BASES DE LA DINÁMICA.</strong></p>
-              <ol class="ol__letras">
-                <li>
-                  <p class="text-decoration-underline">Vigencia:  </p>
-                  <p>Del 18 al 24 de septiembre de 2023.</p>
-                </li>
-                <li>
-                  <p class="text-decoration-underline">Lugar de participación para hacer las compras (en lo sucesivo el “Sito Web de LINIO MX”):</p>
-                  <p>https://www.linio.com.mx/</p>
-                </li>
-              </ol>
+            <p><strong>IV.MECÁNICA</str></p>
+            <ol class="ol__letras">
+              <li>Primero: los participantes deberán de tener una cuenta en el Sito Web de LINIO MX. En caso de no contar con la cuenta anteriormente señalada, los participantes la podrán crear antes de su participación.</li>
+              <li>Segundo: una vez cumplido con lo anterior, durante la vigencia de la dinámica, los participantes deberán realizar diversas compras de productos con un monto mínimo de $1,000.00 (mil pesos 00/100 M.N.), dentro del Sito Web de LINIO MX, utilizando tarjetas de MasterCard.</li>
+              <li>La elección del ganador será el día 28 de septiembre de 2023, mediante una publicación del nombre del ganador, que se realizará en la siguiente liga: https://www.linio.com.mx/sp/linioplus</li>
+              <li>Los participantes que no aparezcan en la publicación del ganador, deberán de entender inmediatamente que no fueron ganadores. Al ganador se le contactará para poder coordinar la entrega del Premio, asimismo se le pedirá que dentro de los 3 (tres) días naturales siguientes: i) confirme la aceptación de su Premio, ii) envíe copia de su identificación oficial y iii) envío los datos necesarios para hacer llegar el Premio</li>
+            </ol>
 
-              <p><strong>IV.MECÁNICA</str></p>
-              <ol class="ol__letras">
-                <li>Primero: los participantes deberán de tener una cuenta en el Sito Web de LINIO MX. En caso de no contar con la cuenta anteriormente señalada, los participantes la podrán crear antes de su participación.</li>
-                <li>Segundo: una vez cumplido con lo anterior, durante la vigencia de la dinámica, los participantes deberán realizar diversas compras de productos con un monto mínimo de $1,000.00 (mil pesos 00/100 M.N.), dentro del Sito Web de LINIO MX, utilizando tarjetas de MasterCard.</li>
-                <li>La elección del ganador será el día 28 de septiembre de 2023, mediante una publicación del nombre del ganador, que se realizará en la siguiente liga: https://www.linio.com.mx/sp/linioplus</li>
-                <li>Los participantes que no aparezcan en la publicación del ganador, deberán de entender inmediatamente que no fueron ganadores. Al ganador se le contactará para poder coordinar la entrega del Premio, asimismo se le pedirá que dentro de los 3 (tres) días naturales siguientes: i) confirme la aceptación de su Premio, ii) envíe copia de su identificación oficial y iii) envío los datos necesarios para hacer llegar el Premio</li>
-              </ol>
+            <p><strong>V.GANADOR Y ENTREGA DEL PREMIO</strong></p>
+            <p>El ganador será anunciado el día 28 de septiembre de 2023, y será el participante que durante el plazo de la presente promoción haya pagado la mayor cantidad del total de todas sus compras, y que además haya cumplido con las Condiciones de Participación y demás requisitos establecidos en el presente. </p>
+            <p>Una vez confirmada la aceptación del Premio, el ganador recibirá dentro de los 30 (treinta) días hábiles siguientes el Premio. El ganador tendrá un máximo de los 3 (tres) días naturales para responder respecto de la aceptación del Premio, de lo contrario se tomará como rechazado y será asignado al siguiente participante que haya pagado la mayor cantidad del total de todas sus compras.</p>
 
-              <p><strong>V.GANADOR Y ENTREGA DEL PREMIO</strong></p>
-              <p>El ganador será anunciado el día 28 de septiembre de 2023, y será el participante que durante el plazo de la presente promoción haya pagado la mayor cantidad del total de todas sus compras, y que además haya cumplido con las Condiciones de Participación y demás requisitos establecidos en el presente. </p>
-              <p>Una vez confirmada la aceptación del Premio, el ganador recibirá dentro de los 30 (treinta) días hábiles siguientes el Premio. El ganador tendrá un máximo de los 3 (tres) días naturales para responder respecto de la aceptación del Premio, de lo contrario se tomará como rechazado y será asignado al siguiente participante que haya pagado la mayor cantidad del total de todas sus compras.</p>
+            <p><strong>VI.RESTRICCIONES</strong></p>
+            <ol class="ol__numeros">
+              <li>Promoción válida dentro de la República Mexicana y únicamente para mayores de edad.</li>
+              <li>Queda prohibida la participación de Empleados de LINIO MX.</li>
+              <li>Se considerarán válidas, únicamente las compras, realizadas durante la vigencia de la dinámica, por lo que toda compra que se realice fuera de dicho periodo no participará en la dinámica. </li>
+              <li>Los participantes podrán realizar tantas compras como quieran.</li>
+              <li>No habrá ningún ajuste o cambio en el Premio ofrecido.</li>
+              <li>El ganador y su acompañante deberá de tener pasaporte vigente, siendo que entre la vigencia de expiración de su pasaporte y la fecha de Los Latin GRAMMYs, deberán de tener como mínimo un plazo de 6 meses antes de que expire este, así como ser mayores de edad.</li>
+              <li>El ganador y su acompañante deberán de firmar todos los documentos de privacidad, así como de uso de imagen que le sean proporcionados por LINIO MX.</li>
+              <li>Cualquier gasto no previsto como parte del Premio correrá a cargo del ganador y su acompañante, señalando de forma enunciativa más no limitativa: gastos de transporte que deban ser erogados por los ganadores de su lugar de residencia al Aeropuerto, gastos de transporte en general, cargos por exceso de equipaje, gastos médicos, comidas y entradas a atracciones.</li>
+              <li>El Premio no será reembolsable y no será pagado en su equivalente en dinero o cualquier otra forma de pago que no sea el Premio en sí mismo.</li>
+              <li>El Premio será personal e intransferible.</li>
+              <li>LINIO MX se reserva en todo momento el derecho de anular participantes con conductas contrarias a las políticas de ética de LINIO MX.</li>
+              <li>LINIO MX no asumirá responsabilidad alguna por accidentes o eventos de fuerza mayor que se pudieran generarse durante el desarrollo del viaje del ganador, por lo que, el ganador y su acompañante no se reservan acción o derecho alguno que ejercitar en contra de LINIO MX.</li>
+              <li>En caso de el ganador o su respectivo acompañante, no aborden el vuelo que les corresponda, LINIO MX no será responsable, por lo que, el ganador o su acompañante no le podrán pedir de manera posterior la programación de otro vuelo, o que el mismo le sea pagado en dinero o en especie.</li>
+              <li>En caso de que el ganador, no envíe la confirmación del Premio o cualquiera de la información requerida por LINIO MX, dentro del plazo señalado, se entenderá como renuncia expresa al Premio, por lo que el ganador no se reserva acción o derecho alguno que ejercitar con posterioridad.</li>
+              <li>En caso de presentarse algún empate con respecto al ganador, se tomará como criterio de desempate el participante que haya realizado sus compras primero, donde se tomará como referencia, el día, hora y minutos en el que se realizó cada compra. </li>
+              <li>En caso de que el ganador cancele cualquiera o la totalidad de las compras con las que participó, de manera automática será descalificado como ganador, siendo que se elegirá al siguiente participante que haya pagado la mayor cantidad del total de todas sus compras. </li>
+            </ol>
 
-              <p><strong>VI.RESTRICCIONES</strong></p>
-              <ol class="ol__numeros">
-                <li>Promoción válida dentro de la República Mexicana y únicamente para mayores de edad.</li>
-                <li>Queda prohibida la participación de Empleados de LINIO MX.</li>
-                <li>Se considerarán válidas, únicamente las compras, realizadas durante la vigencia de la dinámica, por lo que toda compra que se realice fuera de dicho periodo no participará en la dinámica. </li>
-                <li>Los participantes podrán realizar tantas compras como quieran.</li>
-                <li>No habrá ningún ajuste o cambio en el Premio ofrecido.</li>
-                <li>El ganador y su acompañante deberá de tener pasaporte vigente, siendo que entre la vigencia de expiración de su pasaporte y la fecha de Los Latin GRAMMYs, deberán de tener como mínimo un plazo de 6 meses antes de que expire este, así como ser mayores de edad.</li>
-                <li>El ganador y su acompañante deberán de firmar todos los documentos de privacidad, así como de uso de imagen que le sean proporcionados por LINIO MX.</li>
-                <li>Cualquier gasto no previsto como parte del Premio correrá a cargo del ganador y su acompañante, señalando de forma enunciativa más no limitativa: gastos de transporte que deban ser erogados por los ganadores de su lugar de residencia al Aeropuerto, gastos de transporte en general, cargos por exceso de equipaje, gastos médicos, comidas y entradas a atracciones.</li>
-                <li>El Premio no será reembolsable y no será pagado en su equivalente en dinero o cualquier otra forma de pago que no sea el Premio en sí mismo.</li>
-                <li>El Premio será personal e intransferible.</li>
-                <li>LINIO MX se reserva en todo momento el derecho de anular participantes con conductas contrarias a las políticas de ética de LINIO MX.</li>
-                <li>LINIO MX no asumirá responsabilidad alguna por accidentes o eventos de fuerza mayor que se pudieran generarse durante el desarrollo del viaje del ganador, por lo que, el ganador y su acompañante no se reservan acción o derecho alguno que ejercitar en contra de LINIO MX.</li>
-                <li>En caso de el ganador o su respectivo acompañante, no aborden el vuelo que les corresponda, LINIO MX no será responsable, por lo que, el ganador o su acompañante no le podrán pedir de manera posterior la programación de otro vuelo, o que el mismo le sea pagado en dinero o en especie.</li>
-                <li>En caso de que el ganador, no envíe la confirmación del Premio o cualquiera de la información requerida por LINIO MX, dentro del plazo señalado, se entenderá como renuncia expresa al Premio, por lo que el ganador no se reserva acción o derecho alguno que ejercitar con posterioridad.</li>
-                <li>En caso de presentarse algún empate con respecto al ganador, se tomará como criterio de desempate el participante que haya realizado sus compras primero, donde se tomará como referencia, el día, hora y minutos en el que se realizó cada compra. </li>
-                <li>En caso de que el ganador cancele cualquiera o la totalidad de las compras con las que participó, de manera automática será descalificado como ganador, siendo que se elegirá al siguiente participante que haya pagado la mayor cantidad del total de todas sus compras. </li>
-              </ol>
-
-              <p><strong>VII.RESPONSABILIDADES</strong></p>
-              <ol class="ol__numeros">
-                <li>Los participantes serán responsables de toda la información registrada como parte de la dinámica.</li>
-                <li>El Premio aquí ofrecido son patrocinados y proporcionados por MasterCard. La entrega del Premio será coordinada por la agencia contratada para estos efectos por MasterCard denominada Octagon, INC (en lo sucesivo la “Agencia”). </li>
-                <li>El ganador y su acompañante deberán de entregar la información necesaria que sea requerida por la Agencia para proceder con la entrega del Premio. </li>
-                <li>Bajo ninguna circunstancia LINIO MX asumirá responsabilidad alguna después de que Mastercard y su Agencia hagan la entrega del Premio. </li>
-                <li>Todo aquel consumidor que participe en la dinámica da por sentado que conoce la mecánica de la misma y que acepta plenamente los presentes términos y   condiciones.</li>
-                <li>LINIO MX se reserva el derecho de modificar total o parcialmente los Términos y Condiciones de la dinámica “Tus compras durante nuestro aniversario te llevan a Los Latin GRAMMYs™”, así como el interpretar las disposiciones ahí inmersas, siendo inapelables las decisiones que tome en este sentido, así como también sobre aspectos no previstos en estas bases.  </li>
-                <li>Cualquier modificación que se produzca por causas ajenas no imputables a LINIO MX será informada con la debida anticipación al público general, sin que ello dé lugar a reclamo o indemnización alguna.</li>
-                <li>Cualquier controversia derivada del presente, se sujetará a las leyes aplicables y a la jurisdicción de los tribunales competentes de la Ciudad de México, renunciando a cualquier otro fuero que, por razón de domicilios presentes o futuros, pudiera corresponder.</li>
-                <li>LINIO MX, en cumplimiento a lo dispuesto en la Ley Federal de Protección Datos Personales en posesión de los Particulares, así como demás disposiciones secundarias, hace de su conocimiento que los datos personales que en virtud de ésta dinámica serán recabados, única y exclusivamente podrán ser utilizados para los fines derivados de ésta relación jurídica. Para mayor información sobre nuestra política de privacidad puede consultar el aviso de privacidad integral en la página web: https://www.linio.com.mx/sp/terminos-y-condiciones</li>
-              </ol>
+            <p><strong>VII.RESPONSABILIDADES</strong></p>
+            <ol class="ol__numeros">
+              <li>Los participantes serán responsables de toda la información registrada como parte de la dinámica.</li>
+              <li>El Premio aquí ofrecido son patrocinados y proporcionados por MasterCard. La entrega del Premio será coordinada por la agencia contratada para estos efectos por MasterCard denominada Octagon, INC (en lo sucesivo la “Agencia”). </li>
+              <li>El ganador y su acompañante deberán de entregar la información necesaria que sea requerida por la Agencia para proceder con la entrega del Premio. </li>
+              <li>Bajo ninguna circunstancia LINIO MX asumirá responsabilidad alguna después de que Mastercard y su Agencia hagan la entrega del Premio. </li>
+              <li>Todo aquel consumidor que participe en la dinámica da por sentado que conoce la mecánica de la misma y que acepta plenamente los presentes términos y   condiciones.</li>
+              <li>LINIO MX se reserva el derecho de modificar total o parcialmente los Términos y Condiciones de la dinámica “Tus compras durante nuestro aniversario te llevan a Los Latin GRAMMYs™”, así como el interpretar las disposiciones ahí inmersas, siendo inapelables las decisiones que tome en este sentido, así como también sobre aspectos no previstos en estas bases.  </li>
+              <li>Cualquier modificación que se produzca por causas ajenas no imputables a LINIO MX será informada con la debida anticipación al público general, sin que ello dé lugar a reclamo o indemnización alguna.</li>
+              <li>Cualquier controversia derivada del presente, se sujetará a las leyes aplicables y a la jurisdicción de los tribunales competentes de la Ciudad de México, renunciando a cualquier otro fuero que, por razón de domicilios presentes o futuros, pudiera corresponder.</li>
+              <li>LINIO MX, en cumplimiento a lo dispuesto en la Ley Federal de Protección Datos Personales en posesión de los Particulares, así como demás disposiciones secundarias, hace de su conocimiento que los datos personales que en virtud de ésta dinámica serán recabados, única y exclusivamente podrán ser utilizados para los fines derivados de ésta relación jurídica. Para mayor información sobre nuestra política de privacidad puede consultar el aviso de privacidad integral en la página web: https://www.linio.com.mx/sp/terminos-y-condiciones</li>
+            </ol>
 
 
 
-            </div>
           </div>
         </div>
-        <div class="card">
-          <div class="card-header" id="headingTwo">
-            <h2 class="mb-0">
-              <a class="text-left collapsed" type="button" data-toggle="collapse"
-                data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                ¿Cómo comprar en Linio?
-              </a>
-            </h2>
-          </div>
-          <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
-            <div class="card-body">
+        <div class="faq__header-collapse">
+          <h2 class="mb-0">
+            <a class="text-left collapsed" data-target="#collapse-2">
+              ¿Cómo comprar en Linio?
+            </a>
+          </h2>
+        </div>
+        <div id="collapse-2">
+          <div class="faq__collapse-body">
               <p><strong>Comprar en Linio es muy rápido y fácil:</strong></p>
               <p>En la barra superior de búsqueda podrás escribir el nombre del producto, la marca o la categoría y nuestro sistema te
                 arrojará sugerencias para ayudarte a encontrar tu producto. </p>
@@ -263,7 +233,6 @@
               <p>Además, si buscas productos internacionales, podrás activar la casilla correspondiente en la barra de filtros. </p>
               <p>Sí aún tienes dudas, ¡no te preocupes! Comunícate con nosotros a este número: 55-85-25-13-00 o haz clic aquí: </p>
               <button onclick="window.location.href='https://www.linio.com.mx/sp/preguntas-frecuentes/como-comprar#s1'">Necesito ayuda</button>
-            </div>
           </div>
         </div>
       </div>
@@ -271,6 +240,4 @@
     <!-- Fin contenido landing -->
   </div>
 </body>
-<!-- <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct" crossorigin="anonymous"></script> -->
 </html>
