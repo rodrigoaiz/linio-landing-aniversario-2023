@@ -16,45 +16,9 @@ Fuentes
 ––––––––––––––––––––––––––––––––––––––––––––––––––
 **************************************************
 */
-$espacio__secciones:2rem;
+
 $tipo__titulos: Lato, sans-serif;
 $tipo__textos: Lato, sans-serif;
-body{
-  font-family: $tipo__textos;
-  font-size: clamp(1.5rem, 1vw, 1em);
-}
-em{
-  font-style: italic;
-}
-a{
-  text-decoration: underline;
-  transition: all 0.5s ease;
-}
-button{
-  border: none;
-}
-strong{
-  font-weight: 700;
-}
-p{
-  /* line-height: clamp(1.5em, 1.6vw, 1.7rem); */
-  font-family: $tipo__textos;
-  font-size: clamp(1.05em, 1vw, 1em);
-  margin-bottom: 1em;
-}
-p:last-child{
-  margin-bottom:0;
-}
-.text-center{
-  text-align: center;
-}
-sub,
-sup {
-  font-size: 75%;
-  line-height: 0;
-  position: relative;
-  vertical-align: baseline;
-}
 
 
 /*
@@ -94,7 +58,7 @@ Tus compras
   @include media (767px){
     margin: 0.5rem auto 1rem;
   }
-  p{
+  &__p{
 
     @include parrafo($tipo__textos,clamp(1.2rem,1.8vw,1.9rem), 400, $color__negro);
     line-height: clamp(1.2em, 1.5vw, 1.6rem);
@@ -172,9 +136,8 @@ Como ganar
           height: 5.5rem;
         }
       }
-      img{
+      &-img{
           height: 5rem;
-
           @include media (991px){
             height: 3rem;
            }
@@ -217,40 +180,75 @@ donde
     min-width: 100%;
      margin: 0.9rem auto;
   }
-  p{
+  &__p{
     @include parrafo($tipo__textos,clamp(1.2rem,1.8vw,1.9rem), 400, $color__negro);
     line-height: clamp(1.2em, 1.5vw, 1.6rem);
     text-align: center;
   }
   width: 100%;
-  p:first-child{
+  &__p:first-child{
     margin-bottom: 1rem;
   }
 }
 /*
 **************************************************
 ––––––––––––––––––––––––––––––––––––––––––––––––––
-ganador
+Si ganas
 ––––––––––––––––––––––––––––––––––––––––––––––––––
 **************************************************
 */
-.ganador{
-  max-width: 80%;
-  margin: 1.5rem auto;
-  @include media(991px){
-    min-width: 100%;
-     margin: 0.9rem auto;
+.siganas{
+  width: 100%;
+ /* margin: 2rem auto;*/
+  background-color: $color__gris__claro;
+  padding: 1rem 1.5rem;
+  &__wrapper{
+    max-width: 90%;
+    margin: 0 auto;
   }
-  p{
-    @include parrafo($tipo__textos,clamp(1.1em,1.5vw,1.7em), 400, $color__negro);
-    line-height: clamp(1.2em, 1.5vw, 1.6rem);
-    text-align: center;
-    width: 100%;
+  &__sup {
+    font-size: 75%;
+    line-height: 0;
+    position: relative;
+    vertical-align: baseline;
   }
-  p:first-child{
+  &__h2{
+    @include parrafo($tipo__textos,clamp(1.1em,1.5vw,1.7em), 900, $color__negro);
+  line-height: clamp(1.2em, 1.5vw, 1.6rem);
+  text-align: center;
     margin-bottom: 1rem;
+    @include media(767px){
+      margin-bottom: 0.5rem;
+    }
+  }
+  &__lead{
+    text-align: center;
+    @include titulo(clamp(1.5rem, 1.7vw, 1.7rem));
+    color: $color__negro;
+  }
+  &__ul{
+    margin: 0;
+    &-li{
+      list-style: disc;
+      @include parrafo($tipo__titulos,clamp(1.1rem,1.2vw,1.3rem), 400, $color__negro);
+    }
+    &-li::marker{
+      color:$color__naranja;
+      font-size: 1.5em;
+    }
+  }
+  &__small{
+    margin-top: 0.5rem;
+    &-p{
+      font-family: $tipo__textos;
+      font-size: 0.8em;
+      font-weight:300 ;
+      margin: 0;
+    }
   }
 }
+
+
 /*
 **************************************************
 ––––––––––––––––––––––––––––––––––––––––––––––––––
@@ -269,7 +267,7 @@ participar
     max-width: 2rem;
     display: inline-block
   }
-  button{
+  &__button{
     @include gradiente (linear-gradient, $color__aniversario__rosa, $color__aniversario__naranja);
     margin:0 auto;
     color: $color__blanco;
@@ -279,26 +277,26 @@ participar
     font-family: $tipo__titulos;
     border-radius: 5rem;
     display: block;
-
+    border-style: none;
     }
-  h3{
+  &__h3{
     @include parrafo($tipo__textos,clamp(1.1em,1.5vw,1.7em), 900, $color__negro);
     line-height: clamp(1.2em, 1.5vw, 1.6rem);
     text-align: center;
     width: 100%;
   }
-  form{
+  &__form{
     text-align: center;
-    margin:0
-  }
-  p{
-    @include parrafo($tipo__textos,clamp(1rem,1.1vw,1.2rem), 400, $color__negro);
-    line-height: clamp(1.1em, 1.3vw, 1.4rem);
-    text-align: center;
-    width: 100%;
-  }
-  p:first-child{
-    margin-bottom: 1rem;
+    margin:0;
+    &-p {
+      @include parrafo($tipo__textos,clamp(1rem,1.1vw,1.2rem), 400, $color__negro);
+      line-height: clamp(1.1em, 1.3vw, 1.4rem);
+      text-align: center;
+      width: 100%;
+    }
+    &-p:first-child{
+      margin-bottom: 1rem;
+    }
   }
 }
 /*
@@ -315,11 +313,11 @@ participando
     min-width: 100%;
      margin: 0.9rem auto;
   }
-  svg {
+  &__svg {
     max-width: 2rem;
-    display: inline-block
+    display: inline-block;
   }
-  button{
+  &__button{
     @include gradiente (linear-gradient, $color__aniversario__rosa, $color__aniversario__naranja);
     margin: 0 auto;
     color: $color__blanco;
@@ -328,10 +326,10 @@ participando
     font-size: 1rem;
     font-family: $tipo__titulos;
     border-radius: 5rem;
-    display: block
-
+    display: block;
+    border-style: none;
     }
-    h3{
+    &__h3{
       @include parrafo($tipo__textos,clamp(1.1em,1.5vw,1.7em), 900, $color__negro);
       line-height: clamp(1.2em, 1.5vw, 1.6rem);
       text-align: center;
@@ -343,67 +341,28 @@ participando
 /*
 **************************************************
 ––––––––––––––––––––––––––––––––––––––––––––––––––
-Si ganas
+ganador
 ––––––––––––––––––––––––––––––––––––––––––––––––––
 **************************************************
 */
-.siganas{
-  width: 100%;
- /* margin: 2rem auto;*/
-  background-color: $color__gris__claro;
-  padding: 1rem 1.5rem;
-  &__wrapper{
-    max-width: 90%;
-    margin: 0 auto;
+.ganador{
+  max-width: 80%;
+  margin: 1.5rem auto;
+  @include media(991px){
+    min-width: 100%;
+     margin: 0.9rem auto;
   }
-
-  &__h2{
-    @include parrafo($tipo__textos,clamp(1.1em,1.5vw,1.7em), 900, $color__negro);
-  line-height: clamp(1.2em, 1.5vw, 1.6rem);
-  text-align: center;
-    margin-bottom: 1rem;
-    @include media(767px){
-      margin-bottom: 0.5rem;
-    }
-  }
-  p{
-    @include parrafo($tipo__titulos,clamp(1.5rem,1vw,2rem), 900, $color__negro);
-  }
-  button{
-    @include gradiente (linear-gradient, $color__aniversario__rosa, $color__aniversario__naranja);
-    margin: 1rem auto 0;
-    color: $color__blanco;
-    text-transform: uppercase;
-    padding: 0.5rem 0.5rem;
-    font-size: 1rem;
-    font-family: $tipo__titulos;
-    border-radius: 5rem;
-
-  }
-  &__lead{
+  &__p{
+    @include parrafo($tipo__textos,clamp(1.1em,1.5vw,1.7em), 400, $color__negro);
+    line-height: clamp(1.2em, 1.5vw, 1.6rem);
     text-align: center;
-    @include titulo(clamp(1.5rem, 1.7vw, 1.7rem));
-    color: $color__negro;
+    width: 100%;
   }
-  ul{
-    margin: 0;
-    li{
-      list-style: disc;
-      @include parrafo($tipo__titulos,clamp(1.1rem,1.2vw,1.3rem), 400, $color__negro);
-    }
-    li::marker{
-      color:$color__naranja;
-      font-size: 1.5em;
-    }
-  }
-  &__small{
-    p{
-      font-size: 0.7em;
-      font-weight:300 ;
-      margin: 0;
-    }
+  &__p:first-child{
+    margin-bottom: 1rem;
   }
 }
+
 /*
 **************************************************
 ––––––––––––––––––––––––––––––––––––––––––––––––––
@@ -413,27 +372,39 @@ FAQ
 */
 
 .faq{
-  p{
-    @include parrafo($tipo__titulos,clamp(1rem,1.2vw,1.2rem), 400, $color__negro);
-  }
+
   article{
     margin-bottom: 1rem;
   }
   &__header-collapse{
     background-color: $color__gris__claro;;
-    padding: 0.5em;
+    padding:0.5rem;
+  }
+  &__collapse-h3{
+    @include parrafo($tipo__titulos,clamp(1.2rem,1.4vw,1.4rem), 900, $color__negro);
+    font-style: italic;
+    margin-bottom: 1rem;
   }
   &__collapse-body{
     padding:1rem 2rem;
+    p{
+      @include parrafo($tipo__titulos,clamp(1rem,1.2vw,1.2rem), 400, $color__negro);
+      line-height: 1.4rem;
+      margin-bottom: 0.8rem;
+    }
   }
-  h2{
-    a{
-        @include parrafo($tipo__titulos,clamp(1.2rem,1.4vw,1.4rem), 900, $color__negro);
-        padding-left: 1rem;
-        text-decoration: none;
-      }
+  &__h4{
+     @include parrafo($tipo__titulos,clamp(1.2rem,1.4vw,1.4rem), 900, $color__negro);
+     margin:1rem 0;
   }
-  button{
+  &__h3{
+    &-a{
+      @include parrafo($tipo__titulos,clamp(1.2rem,1.4vw,1.4rem), 900, $color__negro);
+      padding-left: 1rem;
+      text-decoration: none;
+    }
+  }
+  &__button{
     @include parrafo($tipo__titulos,clamp(1.2rem,1.4vw,1.4rem), 400, $color__negro);
     @include gradiente (linear-gradient, $color__naranja, $color__naranja__alt);
     margin: 0 auto;
@@ -444,34 +415,43 @@ FAQ
     font-family: $tipo__titulos;
     border-radius: 5rem;
     display: block;
-    border-radius: 5rem;
+    border-style: none;
   }
 }
-ol li:before {
-  display: block;
-}
 .ol{
-  margin: 0;
-  color:$color__negro;
   &__numeros{
+    margin: 0;
     li{
+
+      @include parrafo($tipo__titulos,clamp(1rem,1.2vw,1.2rem), 400, $color__negro);
       color:$color__negro;
       list-style: decimal;
-      margin-bottom: 0;
+      margin-bottom: 1rem;
     }
   }
   &__letras{
+    margin: 0;
     li{
+      @include parrafo($tipo__titulos,clamp(1rem,1.2vw,1.2rem), 400, $color__negro);
       color:$color__negro;
       list-style:lower-latin;
-      margin-bottom: 0;
+      margin-bottom:1rem;
+      line-height: 1.4rem;
+    }
+    li::before{
+      display: block;
+    }
+    p{
+      @include parrafo($tipo__titulos,clamp(1rem,1.2vw,1.2rem), 400, $color__negro);
+      line-height: 1.4rem;
+      margin-bottom: 1rem;
     }
   }
   &__bullet{
     li{
       color:$color__negro;
       list-style: disc;
-      margin-bottom: 0;
+      margin-bottom:1rem;
     }
   }
 }
