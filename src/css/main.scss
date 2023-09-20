@@ -65,7 +65,53 @@ Tus compras
   }
   width: 100%;
 }
+/*
+**************************************************
+––––––––––––––––––––––––––––––––––––––––––––––––––
+Ganador se que yo seré ganador
+––––––––––––––––––––––––––––––––––––––––––––––––––
+**************************************************
+*/
 
+.ganador{
+  padding: 2rem 1rem;
+  @include gradiente (radial-gradient, $color__aniversario__rosa, $color__aniversario__naranja);
+  &__h2{
+    @include titulo(clamp(1.2em, 3vw, 2.2rem));
+    color: $color__blanco;
+    margin: 0;
+    line-height: clamp(1.1em, 1.2vw, 1.4rem);
+  }
+  &__h3{
+    @include titulo(clamp(2.5em, 3vw, 3rem));
+    color: $color__blanco;
+    margin:0.5rem 0;
+    line-height: clamp(1.1em, 1.2vw, 1.6rem);
+    text-shadow: 4px 2px 7px rgba(0,0,0,0.6);
+
+  }
+  &__h4{
+    @include parrafo($tipo__textos,clamp(1.2rem,1.3vw,1.4rem), 400, $color__blanco);
+    text-align: center;
+    margin: 0;
+    line-height: clamp(1.1em, 1.2vw, 1.6rem);
+  }
+
+  margin: 1.5rem auto;
+  @include media(991px){
+    min-width: 100%;
+     margin: 0.9rem auto;
+  }
+  &__p{
+    @include parrafo($tipo__textos,clamp(1.1em,1.5vw,1.7em), 400, $color__negro);
+    line-height: clamp(1.2em, 1.5vw, 1.6rem);
+    text-align: center;
+    width: 100%;
+  }
+  &__p:first-child{
+    margin-bottom: 1rem;
+  }
+}
 /*
 **************************************************
 ––––––––––––––––––––––––––––––––––––––––––––––––––
@@ -337,30 +383,7 @@ participando
   width: 100%;
 }
 
-/*
-**************************************************
-––––––––––––––––––––––––––––––––––––––––––––––––––
-ganador
-––––––––––––––––––––––––––––––––––––––––––––––––––
-**************************************************
-*/
-.ganador{
-  max-width: 80%;
-  margin: 1.5rem auto;
-  @include media(991px){
-    min-width: 100%;
-     margin: 0.9rem auto;
-  }
-  &__p{
-    @include parrafo($tipo__textos,clamp(1.1em,1.5vw,1.7em), 400, $color__negro);
-    line-height: clamp(1.2em, 1.5vw, 1.6rem);
-    text-align: center;
-    width: 100%;
-  }
-  &__p:first-child{
-    margin-bottom: 1rem;
-  }
-}
+
 
 /*
 **************************************************
@@ -371,7 +394,7 @@ FAQ
 */
 
 .faq{
-
+  margin-top: 1rem;
   article{
     margin-bottom: 1rem;
   }
